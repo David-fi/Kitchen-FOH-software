@@ -37,7 +37,9 @@
       </MenuButton>
       <Label layoutX="275.0" layoutY="189.0" prefHeight="48.0" prefWidth="111.0" text="Type of Dish" />
       <Label layoutX="286.0" layoutY="274.0" />
-      <Button layoutX="275.0" layoutY="279.0" mnemonicParsing="false" onAction="#switchToReview" text="Insert Image" />
+      <Button layoutX="275.0" layoutY="279.0" mnemonicParsing="false" text="Insert Image" />
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="33.0" layoutY="97.0" pickOnBounds="true" preserveRatio="true" />
+      <Separator prefWidth="200.0" />
+      <Separator layoutX="3.0" layoutY="64.0" prefHeight="3.0" prefWidth="600.0" />
     </children>
 </AnchorPane>

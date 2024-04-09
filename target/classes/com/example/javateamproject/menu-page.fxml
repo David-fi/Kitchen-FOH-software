@@ -1,22 +1,120 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ButtonBar?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javateamproject.SceneController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="642.0" prefWidth="786.0" style="-fx-background-color: linear-gradient(to right bottom, #42E695, #32B2B8);;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javateamproject.SceneController">
     <children>
-        <ButtonBar layoutX="57.0" layoutY="57.0" prefHeight="40.0" prefWidth="200.0">
-            <buttons>
-                <Button mnemonicParsing="false" onAction="#switchToHome" text="Home" />
-                <Button mnemonicParsing="false" onAction="#switchToOrder" text="Orders" />
-                <Button mnemonicParsing="false" onAction="#switchToMenu" text="Menus" />
-                <Button mnemonicParsing="false" onAction="#switchToBuilder" text="Builder" />
-                <Button mnemonicParsing="false" onAction="#switchToStock" text="Stock" />
-                <Button mnemonicParsing="false" onAction="#switchToReview" text="Review" />
-            </buttons>
-        </ButtonBar>
-        <Label layoutX="163.0" layoutY="160.0" prefHeight="67.0" prefWidth="279.0" text="This is menu" />
+        <Label layoutX="36.0" layoutY="14.0" prefHeight="75.0" prefWidth="140.0" text="Menu">
+         <font>
+            <Font size="52.0" />
+         </font></Label>
+      <Button alignment="BOTTOM_LEFT" layoutY="590.0" mnemonicParsing="false" onAction="#switchToHome" prefHeight="45.0" prefWidth="110.0" stylesheets="@style.css" text="Home" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/Home.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button alignment="BOTTOM_LEFT" layoutX="92.0" layoutY="590.0" mnemonicParsing="false" onAction="#switchToOrder" prefHeight="45.0" prefWidth="110.0" stylesheets="@style.css" text="Orders" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/Orders.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button alignment="BOTTOM_LEFT" layoutX="195.0" layoutY="590.0" mnemonicParsing="false" onAction="#switchToMenu" prefHeight="45.0" prefWidth="118.0" stylesheets="@style.css" text="Creations" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/Creations.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button alignment="BOTTOM_LEFT" layoutX="324.0" layoutY="590.0" mnemonicParsing="false" onAction="#switchToStock" prefHeight="45.0" prefWidth="124.0" stylesheets="@style.css" text="Tracking" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/Tracking.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button alignment="BOTTOM_LEFT" layoutX="437.0" layoutY="590.0" mnemonicParsing="false" onAction="#switchToReview" prefHeight="45.0" prefWidth="131.0" stylesheets="@style.css" text="Discussion" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="25.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/Discussions.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button alignment="BOTTOM_LEFT" layoutX="560.0" layoutY="590.0" mnemonicParsing="false" onAction="#switchToBuilder" prefHeight="45.0" prefWidth="124.0" stylesheets="@style.css" text="Builder" textAlignment="JUSTIFY" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/Builder.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button alignment="BOTTOM_LEFT" layoutX="676.0" layoutY="590.0" mnemonicParsing="false" onAction="#switchToReview" prefHeight="45.0" prefWidth="110.0" stylesheets="@style.css" text="Reviews" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="50.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/Reviews.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <TableView layoutX="106.0" layoutY="130.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="425.0" prefWidth="574.0">
+        <columns>
+          <TableColumn minWidth="18.0" prefWidth="113.5" text="Dish ID" />
+          <TableColumn minWidth="18.0" prefWidth="113.5" text="Dish Name" />
+            <TableColumn prefWidth="118.0" text="Type" />
+            <TableColumn prefWidth="114.0" text="Date" />
+            <TableColumn prefWidth="113.0" text="Owner" />
+        </columns>
+      </TableView>
+      <ImageView fitHeight="45.0" fitWidth="68.0" layoutX="180.0" layoutY="29.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@Images/Creations.png" />
+         </image>
+      </ImageView>
+      <Separator prefWidth="200.0" />
+      <Separator layoutX="-6.0" layoutY="89.0" prefHeight="18.0" prefWidth="796.0" />
     </children>
 </AnchorPane>
