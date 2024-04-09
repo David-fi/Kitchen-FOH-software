@@ -18,93 +18,93 @@
          </font>
       </Label>
       <Separator layoutX="-6.0" layoutY="100.0" prefHeight="12.0" prefWidth="886.0" />
-      <Button alignment="BOTTOM_LEFT" layoutX="10.0" layoutY="685.0" mnemonicParsing="false" onAction="#switchToHome" prefHeight="45.0" prefWidth="130.0" stylesheets="@../style.css" text="Home" textFill="WHITE">
+      <Button alignment="BOTTOM_LEFT" layoutX="10.0" layoutY="685.0" mnemonicParsing="false" onAction="#switchToHome" prefHeight="45.0" prefWidth="130.0" stylesheets="@style.css" text="Home" textFill="WHITE">
          <font>
             <Font size="15.0" />
          </font>
          <graphic>
             <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@Home.png" />
+                  <Image url="@Images/Home.png" />
                </image>
             </ImageView>
          </graphic>
       </Button>
-      <Button alignment="BOTTOM_LEFT" layoutX="116.0" layoutY="685.0" mnemonicParsing="false" onAction="#switchToOrder" prefHeight="45.0" prefWidth="130.0" stylesheets="@../style.css" text="Orders" textFill="WHITE">
+      <Button alignment="BOTTOM_LEFT" layoutX="116.0" layoutY="685.0" mnemonicParsing="false" onAction="#switchToOrder" prefHeight="45.0" prefWidth="130.0" stylesheets="@style.css" text="Orders" textFill="WHITE">
          <font>
             <Font size="15.0" />
          </font>
          <graphic>
             <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@Orders.png" />
+                  <Image url="@Images/Orders.png" />
                </image>
             </ImageView>
          </graphic>
       </Button>
-      <Button alignment="BOTTOM_LEFT" layoutX="238.0" layoutY="685.0" mnemonicParsing="false" onAction="#switchToMenu" prefHeight="45.0" prefWidth="130.0" stylesheets="@../style.css" text="Creations" textFill="WHITE">
+      <Button alignment="BOTTOM_LEFT" layoutX="238.0" layoutY="685.0" mnemonicParsing="false" onAction="#switchToMenu" prefHeight="45.0" prefWidth="130.0" stylesheets="@style.css" text="Creations" textFill="WHITE">
          <font>
             <Font size="15.0" />
          </font>
          <graphic>
             <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@Creations.png" />
+                  <Image url="@Images/Creations.png" />
                </image>
             </ImageView>
          </graphic>
       </Button>
-      <Button alignment="BOTTOM_LEFT" layoutX="368.0" layoutY="685.0" mnemonicParsing="false" onAction="#switchToStock" prefHeight="45.0" prefWidth="130.0" stylesheets="@../style.css" text="Tracking" textFill="WHITE">
+      <Button alignment="BOTTOM_LEFT" layoutX="368.0" layoutY="685.0" mnemonicParsing="false" onAction="#switchToStock" prefHeight="45.0" prefWidth="130.0" stylesheets="@style.css" text="Tracking" textFill="WHITE">
          <font>
             <Font size="15.0" />
          </font>
          <graphic>
             <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@Tracking.png" />
+                  <Image url="@Images/Tracking.png" />
                </image>
             </ImageView>
          </graphic>
       </Button>
-      <Button alignment="BOTTOM_LEFT" layoutX="498.0" layoutY="685.0" mnemonicParsing="false" onAction="#switchToReview" prefHeight="45.0" prefWidth="130.0" stylesheets="@../style.css" text="Discussion" textFill="WHITE">
+      <Button alignment="BOTTOM_LEFT" layoutX="498.0" layoutY="685.0" mnemonicParsing="false" onAction="#switchToReview" prefHeight="45.0" prefWidth="130.0" stylesheets="@style.css" text="Discussion" textFill="WHITE">
          <font>
             <Font size="15.0" />
          </font>
          <graphic>
             <ImageView fitHeight="25.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@Discussions.png" />
+                  <Image url="@Images/Discussions.png" />
                </image>
             </ImageView>
          </graphic>
       </Button>
-      <Button alignment="BOTTOM_LEFT" layoutX="639.0" layoutY="685.0" mnemonicParsing="false" onAction="#switchToBuilder" prefHeight="45.0" prefWidth="130.0" stylesheets="@../style.css" text="Builder" textAlignment="JUSTIFY" textFill="WHITE">
+      <Button alignment="BOTTOM_LEFT" layoutX="639.0" layoutY="685.0" mnemonicParsing="false" onAction="#switchToBuilder" prefHeight="45.0" prefWidth="130.0" stylesheets="@style.css" text="Builder" textAlignment="JUSTIFY" textFill="WHITE">
          <font>
             <Font size="15.0" />
          </font>
          <graphic>
             <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@Builder.png" />
+                  <Image url="@Images/Builder.png" />
                </image>
             </ImageView>
          </graphic>
       </Button>
-      <Button alignment="BOTTOM_LEFT" layoutX="760.0" layoutY="685.0" mnemonicParsing="false" onAction="#switchToReview" prefHeight="45.0" prefWidth="130.0" stylesheets="@../style.css" text="Reviews" textFill="WHITE">
+      <Button alignment="BOTTOM_LEFT" layoutX="760.0" layoutY="685.0" mnemonicParsing="false" onAction="#switchToReview" prefHeight="45.0" prefWidth="130.0" stylesheets="@style.css" text="Reviews" textFill="WHITE">
          <font>
             <Font size="15.0" />
          </font>
          <graphic>
             <ImageView fitHeight="50.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@Reviews.png" />
+                  <Image url="@Images/Reviews.png" />
                </image>
             </ImageView>
          </graphic>
       </Button>
       <ImageView fitHeight="53.0" fitWidth="68.0" layoutX="227.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@Discussions.png" />
+            <Image url="@Images/Discussions.png" />
          </image>
       </ImageView>
       <TextField layoutX="71.0" layoutY="170.0" prefHeight="480.0" prefWidth="748.0" />

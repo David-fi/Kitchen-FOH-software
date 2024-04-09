@@ -134,19 +134,12 @@
         </AnchorPane>
         <AnchorPane layoutX="201.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="201.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="0.0">
             <children>
-                <VBox prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="70.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="350.0">
+                <VBox prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="70.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="300.0">
                     <children>
-                        <Label alignment="CENTER" prefHeight="50.0" prefWidth="780.0" styleClass="background-colour" stylesheets="@style.css" text="Kitchen Dashboard" textFill="WHITE">
+                        <Label alignment="CENTER" prefHeight="71.0" prefWidth="780.0" styleClass="background-colour" stylesheets="@style.css" text="Kitchen Dashboard" textFill="WHITE">
                             <font>
                                 <Font size="20.0" />
                             </font>
-                            <graphic>
-                                <ImageView fitHeight="25.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
-                                    <image>
-                                        <Image url="@Images/Dashboard.png" />
-                                    </image>
-                                </ImageView>
-                            </graphic>
                         </Label>
                         <ScrollPane hbarPolicy="NEVER" prefHeight="340.0" prefWidth="780.0" />
                     </children>
@@ -183,8 +176,7 @@
                         </Label>
                      </children>
                   </AnchorPane>
-                  <Separator prefWidth="200.0" style="-fx-border-color: blacck;" />
-                  <AnchorPane />
+                  <Separator prefWidth="200.0" />
                </children>
             </VBox>
             </children>

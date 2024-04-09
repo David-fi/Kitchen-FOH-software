@@ -9,3 +9,8 @@
 .background-colour {
     -fx-background-color: linear-gradient(to right bottom, #42E695, #32B2B8);
 }
+
+.table-button {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}

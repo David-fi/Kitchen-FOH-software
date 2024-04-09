@@ -14,7 +14,7 @@
    <children>
       <ImageView fitHeight="179.0" fitWidth="285.0" layoutX="308.0" layoutY="137.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@Lancaster's.png" />
+            <Image url="@Images/Lancaster's.png" />
          </image>
       </ImageView>
       <PasswordField layoutX="340.0" layoutY="417.0" prefHeight="37.0" prefWidth="200.0" />
