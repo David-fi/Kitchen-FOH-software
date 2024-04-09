@@ -156,7 +156,7 @@
                <children>
                   <AnchorPane>
                      <children>
-                        <Label alignment="CENTER" prefHeight="145.0" prefWidth="795.0" text="Lancaster's Resturant">
+                        <Label alignment="BOTTOM_CENTER" prefHeight="145.0" prefWidth="795.0" text="Lancaster's Resturant">
                            <graphic>
                                   <ImageView fitHeight="169.0" fitWidth="213.0" pickOnBounds="true" preserveRatio="true">
                                       <image>
@@ -172,12 +172,19 @@
                   </AnchorPane>
                   <AnchorPane>
                      <children>
-                        <Label alignment="TOP_CENTER" prefHeight="51.0" prefWidth="795.0" text="Est. 2006 by Ana and Robert Lancaster">
+                        <Label alignment="TOP_CENTER" prefHeight="51.0" prefWidth="799.0" text="Est. 2006 by Ana and Robert Lancaster">
                            <font>
-                              <Font name="Times New Roman" size="13.0" />
+                              <Font name="Verdana" size="13.0" />
                            </font></Label>
+                        <Label alignment="CENTER" prefHeight="69.0" prefWidth="800.0" text="Delighting guests through Innorvation, Quality and Teamwork">
+                           <font>
+                              <Font name="Nanum Pen Script" size="21.0" />
+                           </font>
+                        </Label>
                      </children>
                   </AnchorPane>
+                  <Separator prefWidth="200.0" style="-fx-border-color: blacck;" />
+                  <AnchorPane />
                </children>
             </VBox>
             </children>
