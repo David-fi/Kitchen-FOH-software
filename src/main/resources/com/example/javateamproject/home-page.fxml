@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javateamproject.SceneController">
     <children>
         <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="background-colour" stylesheets="@style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="880.0" AnchorPane.topAnchor="0.0">
             <children>
@@ -49,7 +49,7 @@
                     <children>
                         <VBox layoutX="41.0" layoutY="100.0" prefHeight="200.0" prefWidth="100.0" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                             <children>
-                                <Button alignment="BOTTOM_LEFT" mnemonicParsing="false" prefHeight="45.0" prefWidth="200.0" stylesheets="@style.css" text="Home" textFill="WHITE">
+                                <Button alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#switchToHome" prefHeight="45.0" prefWidth="200.0" stylesheets="@style.css" text="Home" textFill="WHITE">
                                     <font>
                                         <Font size="15.0" />
                                     </font>
@@ -60,7 +60,7 @@
                                             </image>
                                         </ImageView>
                                     </graphic></Button>
-                                <Button alignment="BOTTOM_LEFT" mnemonicParsing="false" prefHeight="45.0" prefWidth="200.0" stylesheets="@style.css" text="Orders" textFill="WHITE">
+                                <Button alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#switchToOrder" prefHeight="45.0" prefWidth="200.0" stylesheets="@style.css" text="Orders" textFill="WHITE">
                                     <font>
                                         <Font size="15.0" />
                                     </font>
@@ -71,7 +71,7 @@
                                             </image>
                                         </ImageView>
                                     </graphic></Button>
-                                <Button alignment="BOTTOM_LEFT" mnemonicParsing="false" prefHeight="45.0" prefWidth="200.0" stylesheets="@style.css" text="Creations" textFill="WHITE">
+                                <Button alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#switchToMenu" prefHeight="45.0" prefWidth="200.0" stylesheets="@style.css" text="Creations" textFill="WHITE">
                                     <font>
                                         <Font size="15.0" />
                                     </font>
@@ -82,7 +82,7 @@
                                             </image>
                                         </ImageView>
                                     </graphic></Button>
-                                <Button alignment="BOTTOM_LEFT" mnemonicParsing="false" prefHeight="45.0" prefWidth="200.0" stylesheets="@style.css" text="Tracking" textFill="WHITE">
+                                <Button alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#switchToStock" prefHeight="45.0" prefWidth="200.0" stylesheets="@style.css" text="Tracking" textFill="WHITE">
                                     <font>
                                         <Font size="15.0" />
                                     </font>
@@ -93,7 +93,7 @@
                                             </image>
                                         </ImageView>
                                     </graphic></Button>
-                                <Button alignment="BOTTOM_LEFT" mnemonicParsing="false" prefHeight="45.0" prefWidth="200.0" stylesheets="@style.css" text="Discussion" textFill="WHITE">
+                                <Button alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#switchToReview" prefHeight="45.0" prefWidth="200.0" stylesheets="@style.css" text="Discussion" textFill="WHITE">
                                     <font>
                                         <Font size="15.0" />
                                     </font>
@@ -104,7 +104,7 @@
                                             </image>
                                         </ImageView>
                                     </graphic></Button>
-                                <Button alignment="BOTTOM_LEFT" mnemonicParsing="false" prefHeight="45.0" prefWidth="200.0" stylesheets="@style.css" text="Builder" textAlignment="JUSTIFY" textFill="WHITE">
+                                <Button alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#switchToBuilder" prefHeight="45.0" prefWidth="200.0" stylesheets="@style.css" text="Builder" textAlignment="JUSTIFY" textFill="WHITE">
                                     <font>
                                         <Font size="15.0" />
                                     </font>
@@ -115,7 +115,7 @@
                                             </image>
                                         </ImageView>
                                     </graphic></Button>
-                                <Button alignment="BOTTOM_LEFT" mnemonicParsing="false" prefHeight="45.0" prefWidth="200.0" stylesheets="@style.css" text="Reviews" textFill="WHITE">
+                                <Button alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#switchToReview" prefHeight="45.0" prefWidth="200.0" stylesheets="@style.css" text="Reviews" textFill="WHITE">
                                     <font>
                                         <Font size="15.0" />
                                     </font>
