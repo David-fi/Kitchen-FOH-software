@@ -16,22 +16,38 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="880.0" style="-fx-background-color: linear-gradient(to right bottom, #42E695, #32B2B8);" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javateamproject.SceneController">
     <children>
-        <ButtonBar layoutX="14.0" layoutY="14.0" prefHeight="40.0" prefWidth="200.0" />
-        <Label layoutX="33.0" layoutY="10.0" prefHeight="48.0" prefWidth="111.0" text="Dish/Menu Creation" />
+        <ButtonBar layoutX="21.0" layoutY="18.0" prefHeight="40.0" prefWidth="200.0" />
+        <Label layoutX="33.0" layoutY="10.0" prefHeight="48.0" prefWidth="255.0" text="Dish/Menu Creation">
+         <font>
+            <Font size="27.0" />
+         </font>
+      </Label>
       <Separator prefWidth="200.0" />
       <Separator prefWidth="200.0" />
       <TextArea layoutX="343.0" layoutY="203.0" prefHeight="37.0" prefWidth="188.0" />
       <CheckBox layoutX="790.0" layoutY="543.0" mnemonicParsing="false" text="Submit" />
       <DatePicker layoutX="344.0" layoutY="278.0" />
-      <Label layoutX="348.0" layoutY="242.0" prefHeight="48.0" prefWidth="111.0" text="Dish/Menu Creation" />
-      <Label layoutX="348.0" layoutY="153.0" prefHeight="48.0" prefWidth="155.0" text="Name of Dish/Recipe" />
+      <Label layoutX="348.0" layoutY="242.0" prefHeight="48.0" prefWidth="174.0" text="Dish/Menu Creation">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="348.0" layoutY="153.0" prefHeight="48.0" prefWidth="188.0" text="Name of Dish/Recipe">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
       <MenuButton layoutX="343.0" layoutY="360.0" mnemonicParsing="false" text="MenuButton">
         <items>
           <MenuItem mnemonicParsing="false" text="Action 1" />
           <MenuItem mnemonicParsing="false" text="Action 2" />
         </items>
       </MenuButton>
-      <Label layoutX="343.0" layoutY="318.0" prefHeight="48.0" prefWidth="111.0" text="Type of Dish" />
+      <Label layoutX="343.0" layoutY="318.0" prefHeight="48.0" prefWidth="111.0" text="Type of Dish">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
       <Label layoutX="274.0" layoutY="204.0" />
       <Button layoutX="351.0" layoutY="597.0" mnemonicParsing="false" onAction="#switchToReview" text="Insert Image" />
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="33.0" layoutY="97.0" pickOnBounds="true" preserveRatio="true" />
@@ -61,8 +77,12 @@
             </ImageView>
          </graphic>
       </Button>
-      <TextArea layoutX="344.0" layoutY="440.0" prefHeight="120.0" prefWidth="432.0" />
-      <Label layoutX="339.0" layoutY="402.0" prefHeight="48.0" prefWidth="155.0" text="Description of Dish" />
+      <TextArea layoutX="339.0" layoutY="440.0" prefHeight="120.0" prefWidth="432.0" />
+      <Label layoutX="339.0" layoutY="402.0" prefHeight="48.0" prefWidth="167.0" text="Description of Dish">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
       <Button alignment="BOTTOM_LEFT" layoutX="233.0" layoutY="669.0" mnemonicParsing="false" onAction="#switchToMenu" prefHeight="45.0" prefWidth="130.0" stylesheets="@style.css" text="Creations" textFill="WHITE">
          <font>
             <Font size="15.0" />
