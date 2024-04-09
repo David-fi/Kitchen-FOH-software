@@ -54,6 +54,13 @@ public class SceneController {
         stage.setScene(scene);
         stage.show();
     }
+    public void switchToDiscussion(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("Images/Discussion-page.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
 
     public void switchToReview(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("review-page.fxml"));
@@ -62,4 +69,12 @@ public class SceneController {
         stage.setScene(scene);
         stage.show();
     }
+    public void switchToSignIn(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("SignIn.fxml"));
+        stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
 }
