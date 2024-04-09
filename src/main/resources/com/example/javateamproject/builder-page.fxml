@@ -9,37 +9,119 @@
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javateamproject.SceneController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="880.0" style="-fx-background-color: linear-gradient(to right bottom, #42E695, #32B2B8);" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javateamproject.SceneController">
     <children>
         <ButtonBar layoutX="14.0" layoutY="14.0" prefHeight="40.0" prefWidth="200.0" />
-          <Button layoutX="33.0" layoutY="361.0" mnemonicParsing="false" onAction="#switchToHome" text="Home" />
-          <Button layoutX="118.0" layoutY="361.0" mnemonicParsing="false" onAction="#switchToOrder" text="Orders" />
-          <Button layoutX="214.0" layoutY="359.0" mnemonicParsing="false" onAction="#switchToMenu" text="Menus" />
-          <Button layoutX="316.0" layoutY="361.0" mnemonicParsing="false" onAction="#switchToBuilder" text="Builder" />
-          <Button layoutX="412.0" layoutY="359.0" mnemonicParsing="false" onAction="#switchToStock" text="Stock" />
-          <Button layoutX="504.0" layoutY="359.0" mnemonicParsing="false" onAction="#switchToReview" text="Review" />
         <Label layoutX="33.0" layoutY="10.0" prefHeight="48.0" prefWidth="111.0" text="Dish/Menu Creation" />
       <Separator prefWidth="200.0" />
       <Separator prefWidth="200.0" />
-      <TextArea layoutX="275.0" layoutY="97.0" prefHeight="37.0" prefWidth="188.0" />
-      <CheckBox layoutX="501.0" layoutY="316.0" mnemonicParsing="false" text="Submit" />
-      <DatePicker layoutX="275.0" layoutY="164.0" />
-      <Label layoutX="275.0" layoutY="128.0" prefHeight="48.0" prefWidth="111.0" text="Dish/Menu Creation" />
-      <Label layoutX="275.0" layoutY="58.0" prefHeight="48.0" prefWidth="155.0" text="Name of Dish/Recipe" />
-      <MenuButton layoutX="275.0" layoutY="225.0" mnemonicParsing="false" text="MenuButton">
+      <TextArea layoutX="343.0" layoutY="203.0" prefHeight="37.0" prefWidth="188.0" />
+      <CheckBox layoutX="790.0" layoutY="543.0" mnemonicParsing="false" text="Submit" />
+      <DatePicker layoutX="344.0" layoutY="278.0" />
+      <Label layoutX="348.0" layoutY="242.0" prefHeight="48.0" prefWidth="111.0" text="Dish/Menu Creation" />
+      <Label layoutX="348.0" layoutY="153.0" prefHeight="48.0" prefWidth="155.0" text="Name of Dish/Recipe" />
+      <MenuButton layoutX="343.0" layoutY="360.0" mnemonicParsing="false" text="MenuButton">
         <items>
           <MenuItem mnemonicParsing="false" text="Action 1" />
           <MenuItem mnemonicParsing="false" text="Action 2" />
         </items>
       </MenuButton>
-      <Label layoutX="275.0" layoutY="189.0" prefHeight="48.0" prefWidth="111.0" text="Type of Dish" />
-      <Label layoutX="286.0" layoutY="274.0" />
-      <Button layoutX="275.0" layoutY="279.0" mnemonicParsing="false" text="Insert Image" />
+      <Label layoutX="343.0" layoutY="318.0" prefHeight="48.0" prefWidth="111.0" text="Type of Dish" />
+      <Label layoutX="274.0" layoutY="204.0" />
+      <Button layoutX="351.0" layoutY="597.0" mnemonicParsing="false" onAction="#switchToReview" text="Insert Image" />
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="33.0" layoutY="97.0" pickOnBounds="true" preserveRatio="true" />
       <Separator prefWidth="200.0" />
-      <Separator layoutX="3.0" layoutY="64.0" prefHeight="3.0" prefWidth="600.0" />
+      <Separator layoutX="3.0" layoutY="64.0" prefHeight="3.0" prefWidth="880.0" />
+      <Button alignment="BOTTOM_LEFT" layoutY="669.0" mnemonicParsing="false" onAction="#switchToHome" prefHeight="45.0" prefWidth="130.0" stylesheets="@style.css" text="Home" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/Home.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button alignment="BOTTOM_LEFT" layoutX="114.0" layoutY="669.0" mnemonicParsing="false" onAction="#switchToOrder" prefHeight="45.0" prefWidth="130.0" stylesheets="@style.css" text="Orders" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/Orders.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <TextArea layoutX="344.0" layoutY="440.0" prefHeight="120.0" prefWidth="432.0" />
+      <Label layoutX="339.0" layoutY="402.0" prefHeight="48.0" prefWidth="155.0" text="Description of Dish" />
+      <Button alignment="BOTTOM_LEFT" layoutX="233.0" layoutY="669.0" mnemonicParsing="false" onAction="#switchToMenu" prefHeight="45.0" prefWidth="130.0" stylesheets="@style.css" text="Creations" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/Creations.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button alignment="BOTTOM_LEFT" layoutX="366.0" layoutY="669.0" mnemonicParsing="false" onAction="#switchToStock" prefHeight="45.0" prefWidth="130.0" stylesheets="@style.css" text="Tracking" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/Tracking.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button alignment="BOTTOM_LEFT" layoutX="495.0" layoutY="669.0" mnemonicParsing="false" onAction="#switchToReview" prefHeight="45.0" prefWidth="130.0" stylesheets="@style.css" text="Discussion" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="25.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/Discussions.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button alignment="BOTTOM_LEFT" layoutX="624.0" layoutY="669.0" mnemonicParsing="false" onAction="#switchToBuilder" prefHeight="45.0" prefWidth="130.0" stylesheets="@style.css" text="Builder" textAlignment="JUSTIFY" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/Builder.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
+      <Button alignment="BOTTOM_LEFT" layoutX="736.0" layoutY="669.0" mnemonicParsing="false" onAction="#switchToReview" prefHeight="45.0" prefWidth="130.0" stylesheets="@style.css" text="Reviews" textFill="WHITE">
+         <font>
+            <Font size="15.0" />
+         </font>
+         <graphic>
+            <ImageView fitHeight="50.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@Images/Reviews.png" />
+               </image>
+            </ImageView>
+         </graphic>
+      </Button>
     </children>
 </AnchorPane>
