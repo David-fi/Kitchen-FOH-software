@@ -137,62 +137,111 @@
         </AnchorPane>
         <AnchorPane layoutX="201.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="201.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="0.0">
             <children>
-            <VBox spacing="25.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="50.0">
+                <Label alignment="CENTER" text="Designed and developed by TechformIT © 2024" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+            <VBox layoutX="50.0" layoutY="50.0" spacing="20.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="50.0">
                <children>
-                  <VBox styleClass="gradient-border" stylesheets="@StyleElements/style.css">
+                  <HBox prefHeight="310.0" prefWidth="780.0" spacing="10.0">
                      <children>
-                        <Label alignment="CENTER" prefHeight="33.0" prefWidth="830.0" styleClass="background-colour" stylesheets="@StyleElements/style.css" text="Kitchen Discussions" textFill="WHITE">
-                           <font>
-                              <Font size="20.0" />
-                           </font>
-                        </Label>
-                        <HBox prefHeight="30.0" prefWidth="364.0" style="-fx-border-color: grey; -fx-border-radius: 5px;">
+                        <VBox prefHeight="287.0" prefWidth="366.0" styleClass="gradient-border" stylesheets="@StyleElements/style.css">
                            <children>
-                              <TextField prefHeight="28.0" prefWidth="801.0" />
-                              <Button contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" prefHeight="28.0" prefWidth="0.0" text="Button">
-                                 <graphic>
-                                    <ImageView fitHeight="19.0" fitWidth="93.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@StyleElements/Search.png" />
-                                       </image>
-                                    </ImageView>
-                                 </graphic>
-                              </Button>
+                              <Label alignment="CENTER" prefHeight="54.0" prefWidth="366.0" text="Recipes">
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                                 <font>
+                                    <Font name="American Typewriter" size="25.0" />
+                                 </font>
+                              </Label>
+                              <HBox prefHeight="28.0" prefWidth="179.0" style="-fx-border-color: grey; -fx-border-radius: 5px;">
+                                 <children>
+                                    <TextField prefHeight="26.0" prefWidth="369.0" />
+                                    <Button contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" prefHeight="0.0" prefWidth="0.0" text="Button">
+                                       <graphic>
+                                          <ImageView fitHeight="17.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@StyleElements/Search.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                 </children>
+                              </HBox>
+                              <ScrollPane prefHeight="366.0" prefWidth="366.0">
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </ScrollPane>
                            </children>
-                        </HBox>
-                        <ScrollPane hbarPolicy="NEVER" prefHeight="228.0" prefWidth="820.0" />
+                        </VBox>
+                        <Separator orientation="VERTICAL" prefHeight="200.0" />
+                        <VBox prefHeight="287.0" prefWidth="370.0" styleClass="gradient-border" stylesheets="@StyleElements/style.css">
+                           <children>
+                              <Label alignment="CENTER" prefHeight="54.0" prefWidth="366.0" text="Dishes">
+                                 <font>
+                                    <Font name="American Typewriter" size="25.0" />
+                                 </font>
+                              </Label>
+                              <HBox prefHeight="28.0" prefWidth="179.0" style="-fx-border-color: grey; -fx-border-radius: 5px;">
+                                 <children>
+                                    <TextField prefHeight="60.0" prefWidth="333.0" />
+                                    <Button contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" prefHeight="0.0" prefWidth="0.0" text="Button">
+                                       <graphic>
+                                          <ImageView fitHeight="17.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@StyleElements/Search.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                 </children>
+                              </HBox>
+                              <ScrollPane prefHeight="263.0" prefWidth="370.0">
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </ScrollPane>
+                           </children>
+                        </VBox>
                      </children>
-                  </VBox>
-                  <VBox styleClass="gradient-border" stylesheets="@StyleElements/style.css">
+                  </HBox>
+                  <AnchorPane prefHeight="332.0" prefWidth="780.0" stylesheets="@StyleElements/style.css">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
                      <children>
-                        <Label alignment="CENTER" prefHeight="33.0" prefWidth="830.0" styleClass="background-colour" stylesheets="@StyleElements/style.css" text="Archived Discussions" textFill="WHITE">
-                           <font>
-                              <Font size="20.0" />
-                           </font>
-                        </Label>
-                        <HBox prefHeight="30.0" prefWidth="704.0" style="-fx-border-color: grey; -fx-border-radius: 5px;">
+                        <Separator prefWidth="200.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                        <VBox prefHeight="306.0" prefWidth="780.0" styleClass="gradient-border" stylesheets="@StyleElements/style.css" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="26.0">
                            <children>
-                              <TextField prefHeight="28.0" prefWidth="801.0" />
-                              <Button contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" prefHeight="28.0" prefWidth="0.0" text="Button">
-                                 <graphic>
-                                    <ImageView fitHeight="19.0" fitWidth="93.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@StyleElements/Search.png" />
-                                       </image>
-                                    </ImageView>
-                                 </graphic>
-                              </Button>
+                              <Label alignment="CENTER" prefHeight="31.0" prefWidth="808.0" text="Menus">
+                                 <font>
+                                    <Font name="American Typewriter" size="25.0" />
+                                 </font>
+                              </Label>
+                              <HBox prefHeight="28.0" prefWidth="179.0" style="-fx-border-color: grey; -fx-border-radius: 5px;">
+                                 <children>
+                                    <TextField prefHeight="26.0" prefWidth="833.0" />
+                                    <Button contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" prefHeight="0.0" prefWidth="0.0" text="Button">
+                                       <graphic>
+                                          <ImageView fitHeight="17.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@StyleElements/Search.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                 </children>
+                              </HBox>
+                              <ScrollPane prefHeight="233.0" prefWidth="770.0">
+                                 <VBox.margin>
+                                    <Insets />
+                                 </VBox.margin>
+                              </ScrollPane>
                            </children>
-                           <VBox.margin>
-                              <Insets />
-                           </VBox.margin>
-                        </HBox>
-                        <ScrollPane hbarPolicy="NEVER" prefHeight="228.0" prefWidth="820.0" />
+                        </VBox>
                      </children>
-                  </VBox>
+                  </AnchorPane>
                </children>
             </VBox>
-                <Label alignment="CENTER" text="Designed and developed by TechformIT © 2024" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
             </children>
         </AnchorPane>
     </children>

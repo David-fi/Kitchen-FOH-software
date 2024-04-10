@@ -7,6 +7,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ButtonBar?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -56,7 +57,7 @@
                     <children>
                         <VBox layoutX="41.0" layoutY="100.0" prefHeight="200.0" prefWidth="100.0" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                             <children>
-                                <Button alignment="BOTTOM_LEFT" mnemonicParsing="false" prefHeight="45.0" prefWidth="200.0" stylesheets="@StyleElements/style.css" text="Home" textFill="WHITE">
+                                <Button alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#switchToHome" prefHeight="45.0" prefWidth="200.0" stylesheets="@StyleElements/style.css" text="Home" textFill="WHITE">
                                     <font>
                                         <Font size="15.0" />
                                     </font>
@@ -78,7 +79,7 @@
                                             </image>
                                         </ImageView>
                                     </graphic></Button>
-                                <Button alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#switchToMenu" prefHeight="45.0" prefWidth="200.0" stylesheets="@StyleElements/style.css" text="Creations" textFill="WHITE">
+                                <Button alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#switchToCreation" prefHeight="45.0" prefWidth="200.0" stylesheets="@StyleElements/style.css" text="Creations" textFill="WHITE">
                                     <font>
                                         <Font size="15.0" />
                                     </font>
@@ -89,7 +90,7 @@
                                             </image>
                                         </ImageView>
                                     </graphic></Button>
-                                <Button alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#switchToStock" prefHeight="45.0" prefWidth="200.0" stylesheets="@StyleElements/style.css" text="Tracking" textFill="WHITE">
+                                <Button alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#switchToTracking" prefHeight="45.0" prefWidth="200.0" stylesheets="@StyleElements/style.css" text="Tracking" textFill="WHITE">
                                     <font>
                                         <Font size="15.0" />
                                     </font>
@@ -141,16 +142,21 @@
         </AnchorPane>
         <AnchorPane layoutX="201.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="201.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="0.0">
             <children>
-                <AnchorPane layoutX="225.0" layoutY="245.0" prefHeight="320.0" prefWidth="371.0" AnchorPane.bottomAnchor="350.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="100.0" AnchorPane.topAnchor="25.0">
-                    <children>
-                        <VBox layoutX="150.0" layoutY="50.0" spacing="10.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="150.0" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="25.0">
+            <HBox layoutX="54.0" layoutY="151.0" prefHeight="282.0" prefWidth="780.0" spacing="25.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="25.0">
+               <children>
+                        <VBox prefHeight="228.0" prefWidth="425.0" spacing="10.0">
                             <children>
-                                <HBox style="-fx-border-color: grey; -fx-border-radius: 5px;">
+                        <Label alignment="BOTTOM_CENTER" prefHeight="47.0" prefWidth="419.0" text="Stock">
+                           <font>
+                              <Font name="American Typewriter" size="20.0" />
+                           </font>
+                        </Label>
+                                <HBox prefHeight="33.0" prefWidth="518.0" style="-fx-border-color: grey; -fx-border-radius: 5px;">
                                     <children>
-                                        <TextField prefHeight="47.0" prefWidth="368.0" />
-                                        <Button contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" prefHeight="0.0" prefWidth="31.0" text="Button">
+                                        <TextField prefHeight="35.0" prefWidth="476.0" />
+                                        <Button contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" prefHeight="43.0" prefWidth="47.0" text="Button">
                                             <graphic>
-                                                <ImageView fitHeight="33.0" fitWidth="111.0" pickOnBounds="true" preserveRatio="true">
+                                                <ImageView fitHeight="27.0" fitWidth="17.0" pickOnBounds="true" preserveRatio="true">
                                                     <image>
                                                         <Image url="@StyleElements/Search.png" />
                                                     </image>
@@ -159,7 +165,7 @@
                                         </Button>
                                     </children>
                                 </HBox>
-                                <TableView prefHeight="271.0" prefWidth="650.0" style="-fx-background-radius: 10px;" styleClass="gradient-border" stylesheets="@StyleElements/style.css">
+                                <TableView prefHeight="271.0" prefWidth="452.0" style="-fx-background-radius: 10px;" styleClass="gradient-border" stylesheets="@StyleElements/style.css">
                                     <columns>
                                         <TableColumn prefWidth="43.44110107421875" text="ID" />
                                         <TableColumn prefWidth="138.31185913085938" text="Name" />
@@ -168,10 +174,41 @@
                                     </columns>
                                 </TableView>
                             </children>
+                     <HBox.margin>
+                        <Insets />
+                     </HBox.margin>
                         </VBox>
-                    </children>
-                </AnchorPane>
-                <HBox layoutX="300.0" layoutY="40.0" spacing="20.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="400.0">
+                  <VBox prefHeight="287.0" prefWidth="370.0" styleClass="gradient-border" stylesheets="@StyleElements/style.css">
+                     <children>
+                        <Label alignment="CENTER" prefHeight="54.0" prefWidth="366.0" styleClass="background-colour" stylesheets="@StyleElements/style.css" text="Orders" textFill="WHITE">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <HBox prefHeight="28.0" prefWidth="179.0" style="-fx-border-color: grey; -fx-border-radius: 5px;">
+                           <children>
+                              <TextField prefHeight="60.0" prefWidth="333.0" />
+                              <Button contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" prefHeight="0.0" prefWidth="0.0" text="Button">
+                                 <graphic>
+                                    <ImageView fitHeight="17.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@StyleElements/Search.png" />
+                                       </image>
+                                    </ImageView>
+                                 </graphic>
+                              </Button>
+                           </children>
+                        </HBox>
+                        <ScrollPane prefHeight="263.0" prefWidth="370.0">
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </ScrollPane>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+                <HBox layoutX="300.0" layoutY="353.0" prefHeight="347.0" prefWidth="880.0" spacing="20.0" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="353.0">
                     <children>
                         <LineChart prefHeight="235.0" prefWidth="343.0">
                             <xAxis>
@@ -183,6 +220,11 @@
                         </LineChart>
                         <VBox spacing="10.0">
                             <children>
+                        <Label alignment="BOTTOM_CENTER" prefHeight="47.0" prefWidth="419.0" text="Waste">
+                           <font>
+                              <Font name="American Typewriter" size="20.0" />
+                           </font>
+                        </Label>
                                 <HBox prefHeight="6.0" prefWidth="436.0" style="-fx-border-color: grey; -fx-border-radius: 5px;">
                                     <children>
                                         <TextField prefHeight="62.0" prefWidth="483.0" />
@@ -246,7 +288,7 @@
                         </VBox>
                     </children>
                 </HBox>
-                <Separator layoutX="-366.0" layoutY="333.0" prefHeight="77.0" prefWidth="802.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="320.0" />
+                <Separator layoutX="41.0" layoutY="296.0" prefHeight="77.0" prefWidth="802.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="300.0" />
             <Label alignment="CENTER" text="Designed and developed by TechformIT © 2024" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
             </children></AnchorPane>
     </children>

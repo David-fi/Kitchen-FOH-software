@@ -155,7 +155,7 @@
                     <children>
                         <VBox layoutX="41.0" layoutY="100.0" prefHeight="200.0" prefWidth="100.0" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                             <children>
-                                <Button alignment="BOTTOM_LEFT" mnemonicParsing="false" prefHeight="45.0" prefWidth="200.0" stylesheets="@StyleElements/style.css" text="Home" textFill="WHITE">
+                                <Button alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#switchToHome" prefHeight="45.0" prefWidth="200.0" stylesheets="@StyleElements/style.css" text="Home" textFill="WHITE">
                                     <font>
                                         <Font size="15.0" />
                                     </font>
@@ -177,7 +177,7 @@
                                             </image>
                                         </ImageView>
                                     </graphic></Button>
-                                <Button alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#switchToMenu" prefHeight="45.0" prefWidth="200.0" stylesheets="@StyleElements/style.css" text="Creations" textFill="WHITE">
+                                <Button alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#switchToCreation" prefHeight="45.0" prefWidth="200.0" stylesheets="@StyleElements/style.css" text="Creations" textFill="WHITE">
                                     <font>
                                         <Font size="15.0" />
                                     </font>
@@ -188,7 +188,7 @@
                                             </image>
                                         </ImageView>
                                     </graphic></Button>
-                                <Button alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#switchToStock" prefHeight="45.0" prefWidth="200.0" stylesheets="@StyleElements/style.css" text="Tracking" textFill="WHITE">
+                                <Button alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#switchToTracking" prefHeight="45.0" prefWidth="200.0" stylesheets="@StyleElements/style.css" text="Tracking" textFill="WHITE">
                                     <font>
                                         <Font size="15.0" />
                                     </font>

@@ -31,8 +31,8 @@ public class SceneController {
         stage.show();
     }
 
-    public void switchToMenu(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("menu-page.fxml"));
+    public void switchToCreation(ActionEvent event) throws IOException {
+        Parent root = FXMLLoader.load(getClass().getResource("creation-page.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
@@ -47,7 +47,7 @@ public class SceneController {
         stage.show();
     }
 
-    public void switchToStock(ActionEvent event) throws IOException {
+    public void switchToTracking(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("tracking-page.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
@@ -55,7 +55,7 @@ public class SceneController {
         stage.show();
     }
     public void switchToDiscussion(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("Images/Discussion-page.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("discussion-page.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);
@@ -69,6 +69,7 @@ public class SceneController {
         stage.setScene(scene);
         stage.show();
     }
+
     public void switchToSignIn(ActionEvent event) throws IOException {
         Parent root = FXMLLoader.load(getClass().getResource("sign-in.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
