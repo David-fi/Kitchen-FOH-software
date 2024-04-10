@@ -2,146 +2,241 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ButtonBar?>
-<?import javafx.scene.control.CheckBox?>
-<?import javafx.scene.control.DatePicker?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.MenuButton?>
-<?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.Separator?>
-<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="880.0" style="-fx-background-color: linear-gradient(to right bottom, #42E695, #32B2B8);" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javateamproject.SceneController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javateamproject.SceneController">
     <children>
-        <ButtonBar layoutX="21.0" layoutY="18.0" prefHeight="40.0" prefWidth="200.0" />
-        <Label layoutX="33.0" layoutY="10.0" prefHeight="48.0" prefWidth="255.0" text="Dish/Menu Creation">
-         <font>
-            <Font size="27.0" />
-         </font>
-      </Label>
-      <Separator prefWidth="200.0" />
-      <Separator prefWidth="200.0" />
-      <TextArea layoutX="343.0" layoutY="203.0" prefHeight="37.0" prefWidth="188.0" />
-      <CheckBox layoutX="790.0" layoutY="543.0" mnemonicParsing="false" text="Submit" />
-      <DatePicker layoutX="344.0" layoutY="278.0" />
-      <Label layoutX="348.0" layoutY="242.0" prefHeight="48.0" prefWidth="174.0" text="Dish/Menu Creation">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Label layoutX="348.0" layoutY="153.0" prefHeight="48.0" prefWidth="188.0" text="Name of Dish/Recipe">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <MenuButton layoutX="343.0" layoutY="360.0" mnemonicParsing="false" text="MenuButton">
-        <items>
-          <MenuItem mnemonicParsing="false" text="Action 1" />
-          <MenuItem mnemonicParsing="false" text="Action 2" />
-        </items>
-      </MenuButton>
-      <Label layoutX="343.0" layoutY="318.0" prefHeight="48.0" prefWidth="111.0" text="Type of Dish">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Label layoutX="274.0" layoutY="204.0" />
-      <Button layoutX="351.0" layoutY="597.0" mnemonicParsing="false" onAction="#switchToReview" text="Insert Image" />
-      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="33.0" layoutY="97.0" pickOnBounds="true" preserveRatio="true" />
-      <Separator prefWidth="200.0" />
-      <Separator layoutX="3.0" layoutY="64.0" prefHeight="3.0" prefWidth="880.0" />
-      <Button alignment="BOTTOM_LEFT" layoutY="669.0" mnemonicParsing="false" onAction="#switchToHome" prefHeight="45.0" prefWidth="130.0" stylesheets="@StyleElements/style.css" text="Home" textFill="WHITE">
-         <font>
-            <Font size="15.0" />
-         </font>
-         <graphic>
-            <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@StyleElements/Home.png" />
-               </image>
-            </ImageView>
-         </graphic>
-      </Button>
-      <Button alignment="BOTTOM_LEFT" layoutX="114.0" layoutY="669.0" mnemonicParsing="false" onAction="#switchToOrder" prefHeight="45.0" prefWidth="130.0" stylesheets="@StyleElements/style.css" text="Orders" textFill="WHITE">
-         <font>
-            <Font size="15.0" />
-         </font>
-         <graphic>
-            <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@StyleElements/Orders.png" />
-               </image>
-            </ImageView>
-         </graphic>
-      </Button>
-      <TextArea layoutX="339.0" layoutY="440.0" prefHeight="120.0" prefWidth="432.0" />
-      <Label layoutX="339.0" layoutY="402.0" prefHeight="48.0" prefWidth="167.0" text="Description of Dish">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Button alignment="BOTTOM_LEFT" layoutX="233.0" layoutY="669.0" mnemonicParsing="false" onAction="#switchToMenu" prefHeight="45.0" prefWidth="130.0" stylesheets="@StyleElements/style.css" text="Creations" textFill="WHITE">
-         <font>
-            <Font size="15.0" />
-         </font>
-         <graphic>
-            <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@StyleElements/Creations.png" />
-               </image>
-            </ImageView>
-         </graphic>
-      </Button>
-      <Button alignment="BOTTOM_LEFT" layoutX="366.0" layoutY="669.0" mnemonicParsing="false" onAction="#switchToStock" prefHeight="45.0" prefWidth="130.0" stylesheets="@StyleElements/style.css" text="Tracking" textFill="WHITE">
-         <font>
-            <Font size="15.0" />
-         </font>
-         <graphic>
-            <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@StyleElements/Tracking.png" />
-               </image>
-            </ImageView>
-         </graphic>
-      </Button>
-      <Button alignment="BOTTOM_LEFT" layoutX="495.0" layoutY="669.0" mnemonicParsing="false" onAction="#switchToReview" prefHeight="45.0" prefWidth="130.0" stylesheets="@StyleElements/style.css" text="Discussion" textFill="WHITE">
-         <font>
-            <Font size="15.0" />
-         </font>
-         <graphic>
-            <ImageView fitHeight="25.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@StyleElements/Discussions.png" />
-               </image>
-            </ImageView>
-         </graphic>
-      </Button>
-      <Button alignment="BOTTOM_LEFT" layoutX="624.0" layoutY="669.0" mnemonicParsing="false" onAction="#switchToBuilder" prefHeight="45.0" prefWidth="130.0" stylesheets="@StyleElements/style.css" text="Builder" textAlignment="JUSTIFY" textFill="WHITE">
-         <font>
-            <Font size="15.0" />
-         </font>
-         <graphic>
-            <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@StyleElements/Builder.png" />
-               </image>
-            </ImageView>
-         </graphic>
-      </Button>
-      <Button alignment="BOTTOM_LEFT" layoutX="736.0" layoutY="669.0" mnemonicParsing="false" onAction="#switchToReview" prefHeight="45.0" prefWidth="130.0" stylesheets="@StyleElements/style.css" text="Reviews" textFill="WHITE">
-         <font>
-            <Font size="15.0" />
-         </font>
-         <graphic>
-            <ImageView fitHeight="50.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@StyleElements/Reviews.png" />
-               </image>
-            </ImageView>
-         </graphic>
-      </Button>
+        <AnchorPane layoutX="201.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="201.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label alignment="CENTER" text="Designed and developed by TechformIT © 2024" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+            <GridPane layoutX="11.0" layoutY="15.0" AnchorPane.bottomAnchor="-0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+              <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
+               <children>
+                  <Button contentDisplay="BOTTOM" mnemonicParsing="false" prefHeight="147.0" prefWidth="176.0" styleClass="gradient-border" stylesheets="@StyleElements/style.css" text="Create Recipe" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                     <graphic>
+                        <ImageView fitHeight="94.0" fitWidth="163.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@StyleElements/Chefs3Black.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button contentDisplay="BOTTOM" mnemonicParsing="false" prefHeight="147.0" prefWidth="176.0" styleClass="gradient-border" stylesheets="@StyleElements/style.css" text="Edit Recipe" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                     <graphic>
+                        <ImageView fitHeight="94.0" fitWidth="163.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@StyleElements/Chefs3Black.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button contentDisplay="BOTTOM" mnemonicParsing="false" prefHeight="147.0" prefWidth="176.0" styleClass="gradient-border" stylesheets="@StyleElements/style.css" text="Delete Recipe" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                     <graphic>
+                        <ImageView fitHeight="94.0" fitWidth="163.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@StyleElements/Chefs2Black.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button contentDisplay="BOTTOM" mnemonicParsing="false" prefHeight="147.0" prefWidth="176.0" styleClass="gradient-border" stylesheets="@StyleElements/style.css" text="Create Dish" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                     <graphic>
+                        <ImageView fitHeight="94.0" fitWidth="163.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@StyleElements/Chefs3Black.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button contentDisplay="BOTTOM" mnemonicParsing="false" prefHeight="147.0" prefWidth="176.0" styleClass="gradient-border" stylesheets="@StyleElements/style.css" text="Edit Dish" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                     <graphic>
+                        <ImageView fitHeight="94.0" fitWidth="163.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@StyleElements/Chefs3Black.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button contentDisplay="BOTTOM" mnemonicParsing="false" prefHeight="147.0" prefWidth="176.0" styleClass="gradient-border" stylesheets="@StyleElements/style.css" text="Delete Dish" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                     <graphic>
+                        <ImageView fitHeight="94.0" fitWidth="163.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@StyleElements/Chefs2Black.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button contentDisplay="BOTTOM" mnemonicParsing="false" prefHeight="147.0" prefWidth="176.0" styleClass="gradient-border" stylesheets="@StyleElements/style.css" text="Create Menu" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                     <graphic>
+                        <ImageView fitHeight="94.0" fitWidth="163.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@StyleElements/ChefBlack.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button contentDisplay="BOTTOM" mnemonicParsing="false" prefHeight="147.0" prefWidth="176.0" styleClass="gradient-border" stylesheets="@StyleElements/style.css" text="Edit Menu" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                     <graphic>
+                        <ImageView fitHeight="94.0" fitWidth="163.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@StyleElements/ChefBlack.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button contentDisplay="BOTTOM" mnemonicParsing="false" prefHeight="147.0" prefWidth="176.0" styleClass="gradient-border" stylesheets="@StyleElements/style.css" text="Delete Menu" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                     <graphic>
+                        <ImageView fitHeight="94.0" fitWidth="163.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@StyleElements/ChefBlack.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </GridPane>
+         </children>
+        </AnchorPane>
+        <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="background-colour" stylesheets="@StyleElements/style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="880.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <AnchorPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="450.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <children>
+                        <Separator layoutX="-49.0" layoutY="143.0" prefWidth="200.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
+                        <ButtonBar prefHeight="40.0" prefWidth="200.0">
+                            <buttons>
+                                <Button alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#switchToSignIn" prefHeight="29.0" prefWidth="100.0" text="Sign in" textFill="WHITE">
+                                    <font>
+                                        <Font size="15.0" />
+                                    </font>
+                                    <graphic>
+                                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@StyleElements/Login.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic>
+                                </Button>
+                            </buttons>
+                        </ButtonBar>
+                        <Label alignment="CENTER" layoutY="178.0" prefHeight="60.0" prefWidth="200.0" text="You are not signed in" textAlignment="CENTER" textFill="WHITE" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="180.0">
+                            <font>
+                                <Font size="15.0" />
+                            </font>
+                        </Label>
+                        <ImageView fitHeight="93.0" fitWidth="81.0" layoutX="61.0" layoutY="76.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="61.0" AnchorPane.rightAnchor="60.22950744628906" AnchorPane.topAnchor="76.0">
+                            <image>
+                                <Image url="@StyleElements/Unsigned.png" />
+                            </image>
+                        </ImageView>
+                    </children></AnchorPane>
+                <AnchorPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="270.0">
+                    <children>
+                        <VBox layoutX="41.0" layoutY="100.0" prefHeight="200.0" prefWidth="100.0" spacing="20.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                            <children>
+                                <Button alignment="BOTTOM_LEFT" mnemonicParsing="false" prefHeight="45.0" prefWidth="200.0" stylesheets="@StyleElements/style.css" text="Home" textFill="WHITE">
+                                    <font>
+                                        <Font size="15.0" />
+                                    </font>
+                                    <graphic>
+                                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@StyleElements/Home.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic></Button>
+                                <Button alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#switchToOrder" prefHeight="45.0" prefWidth="200.0" stylesheets="@StyleElements/style.css" text="Orders" textFill="WHITE">
+                                    <font>
+                                        <Font size="15.0" />
+                                    </font>
+                                    <graphic>
+                                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@StyleElements/Orders.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic></Button>
+                                <Button alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#switchToMenu" prefHeight="45.0" prefWidth="200.0" stylesheets="@StyleElements/style.css" text="Creations" textFill="WHITE">
+                                    <font>
+                                        <Font size="15.0" />
+                                    </font>
+                                    <graphic>
+                                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@StyleElements/Creations.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic></Button>
+                                <Button alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#switchToStock" prefHeight="45.0" prefWidth="200.0" stylesheets="@StyleElements/style.css" text="Tracking" textFill="WHITE">
+                                    <font>
+                                        <Font size="15.0" />
+                                    </font>
+                                    <graphic>
+                                        <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@StyleElements/Tracking.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic></Button>
+                                <Button alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#switchToDiscussion" prefHeight="45.0" prefWidth="200.0" stylesheets="@StyleElements/style.css" text="Discussion" textFill="WHITE">
+                                    <font>
+                                        <Font size="15.0" />
+                                    </font>
+                                    <graphic>
+                                        <ImageView fitHeight="25.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@StyleElements/Discussions.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic></Button>
+                                <Button alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#switchToBuilder" prefHeight="45.0" prefWidth="200.0" stylesheets="@StyleElements/style.css" text="Builder" textAlignment="JUSTIFY" textFill="WHITE">
+                                    <font>
+                                        <Font size="15.0" />
+                                    </font>
+                                    <graphic>
+                                        <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@StyleElements/Builder.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic></Button>
+                                <Button alignment="BOTTOM_LEFT" mnemonicParsing="false" onAction="#switchToReview" prefHeight="45.0" prefWidth="200.0" stylesheets="@StyleElements/style.css" text="Reviews" textFill="WHITE">
+                                    <font>
+                                        <Font size="15.0" />
+                                    </font>
+                                    <graphic>
+                                        <ImageView fitHeight="50.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                                            <image>
+                                                <Image url="@StyleElements/Reviews.png" />
+                                            </image>
+                                        </ImageView>
+                                    </graphic></Button>
+                            </children>
+                        </VBox>
+                    </children>
+                </AnchorPane>
+            </children>
+        </AnchorPane>
     </children>
 </AnchorPane>
