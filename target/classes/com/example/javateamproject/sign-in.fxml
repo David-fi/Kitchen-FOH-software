@@ -17,7 +17,7 @@
          <children>
               <ImageView fitHeight="401.0" fitWidth="493.0" pickOnBounds="true" preserveRatio="true">
                   <image>
-                      <Image url="@Images/LancasterWhite.png" />
+                      <Image url="@StyleElements/LancasterWhite.png" />
                   </image>
               </ImageView>
             <VBox prefHeight="322.0" prefWidth="343.0" spacing="25.0">
@@ -34,7 +34,7 @@
                         </font>
                     </Label>
                     <PasswordField prefHeight="81.0" prefWidth="343.0" />
-                    <Button mnemonicParsing="false" prefHeight="47.0" prefWidth="420.0" stylesheets="@style.css" text="Sign In" textFill="WHITE">
+                    <Button mnemonicParsing="false" prefHeight="47.0" prefWidth="420.0" stylesheets="@StyleElements/style.css" text="Sign In" textFill="WHITE">
                      <font>
                         <Font size="25.0" />
                      </font>
