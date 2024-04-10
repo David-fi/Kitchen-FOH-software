@@ -70,7 +70,7 @@ public class SceneController {
         stage.show();
     }
     public void switchToSignIn(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("SignIn.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("sign-in.fxml"));
         stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         scene = new Scene(root);
         stage.setScene(scene);

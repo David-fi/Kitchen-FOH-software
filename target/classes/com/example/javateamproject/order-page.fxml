@@ -161,7 +161,7 @@
                         </Button>
                      </children>
                   </HBox>
-                  <GridPane prefHeight="776.0" prefWidth="780.0" style="-fx-border-color: black; -fx-border-style: dashed;">
+                  <GridPane prefHeight="776.0" prefWidth="780.0" style="-fx-border-color: grey; -fx-border-style: dashed;">
                      <columnConstraints>
                         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                         <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
