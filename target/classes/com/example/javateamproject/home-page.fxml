@@ -134,14 +134,14 @@
         </AnchorPane>
         <AnchorPane layoutX="201.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="201.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="0.0">
             <children>
-                <VBox prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="70.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="300.0">
+                <VBox prefHeight="200.0" prefWidth="100.0" styleClass="gradient-border" stylesheets="@StyleElements/style.css" AnchorPane.bottomAnchor="70.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="300.0">
                     <children>
                         <Label alignment="CENTER" prefHeight="71.0" prefWidth="780.0" styleClass="background-colour" stylesheets="@StyleElements/style.css" text="Kitchen Dashboard" textFill="WHITE">
                             <font>
                                 <Font size="20.0" />
                             </font>
                         </Label>
-                        <ScrollPane hbarPolicy="NEVER" prefHeight="340.0" prefWidth="780.0" />
+                        <ScrollPane hbarPolicy="NEVER" prefHeight="340.0" prefWidth="776.0" styleClass="smooth-edge" stylesheets="@StyleElements/style.css" />
                     </children>
                 </VBox>
                 <Label alignment="CENTER" text="Designed and developed by TechformIT © 2024" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
