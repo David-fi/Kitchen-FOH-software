@@ -247,6 +247,7 @@
                     </children>
                 </HBox>
                 <Separator layoutX="-366.0" layoutY="333.0" prefHeight="77.0" prefWidth="802.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="320.0" />
+            <Label alignment="CENTER" text="Designed and developed by TechformIT © 2024" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
             </children></AnchorPane>
     </children>
 </AnchorPane>
