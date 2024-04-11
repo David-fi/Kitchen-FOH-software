@@ -27,7 +27,7 @@ public class Menu {
         }
     }
     public boolean removeMenuFromDatabase(int menuId) {
-        String sql = "DELETE FROM Menus WHERE id = ?";
+        String sql = "DELETE FROM Menus WHERE MenuID = ?";
         try (PreparedStatement statement = connection.prepareStatement(sql)) {
             statement.setInt(1, menuId);
             int rowsDeleted = statement.executeUpdate();
@@ -37,7 +37,8 @@ public class Menu {
             return false;
         }
     }
-    public boolean updateMenuName(int menuId, String newMenuName) {
+
+    public boolean editMenuName(int menuId, String newMenuName) {
         String sql = "UPDATE Menus SET name = ? WHERE id = ?";
         try (PreparedStatement statement = connection.prepareStatement(sql)) {
             statement.setString(1, newMenuName);
@@ -47,16 +48,6 @@ public class Menu {
         } catch (SQLException ex) {
             ex.printStackTrace();
             return false;
-        }
-    }
-    public ResultSet getMenuItems(int menuId) {
-        String sql = "SELECT i.* FROM MenuItems mi JOIN Items i ON mi.item_id = i.id WHERE mi.menu_id = ?";
-        try (PreparedStatement statement = connection.prepareStatement(sql)) {
-            statement.setInt(1, menuId);
-            return statement.executeQuery();
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-            return null;
         }
     }
 
