@@ -14,6 +14,7 @@ public class KitchenApplication extends Application {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("home-page.fxml"));
             Scene scene = new Scene(root);
+            stage.setTitle("Lancaster's Resturant");
             stage.setScene(scene);
             stage.setResizable(false);
             stage.show();
