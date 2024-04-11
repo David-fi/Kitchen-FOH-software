@@ -12,10 +12,10 @@ public class Menu {
         this.connection = connection;
     }
 
-    public void addMenuToDatabase(String menuName) {
-        String sql = "INSERT INTO Menus (name) VALUES (?)";
+    public void addMenuToDatabase(int menuID) {
+        String sql = "INSERT INTO Menus WHERE MenuID = ?";
         try (PreparedStatement statement = connection.prepareStatement(sql)) {
-            statement.setString(1, menuName);
+            statement.setInt(1, menuID);
             int rowsInserted = statement.executeUpdate();
             if (rowsInserted > 0) {
                 System.out.println("Menu added successfully!");
