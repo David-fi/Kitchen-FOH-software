@@ -2,12 +2,12 @@ package com.example.javateamproject;
 
 import java.sql.*;
 
-public class DatabaseInteractions {
+public class DatabaseConnection {
 
     public Connection connection;
     public Statement statement;
 
-    public DatabaseInteractions() {
+    public DatabaseConnection() {
         createConnection();
     }
 
