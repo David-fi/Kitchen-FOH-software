@@ -12,10 +12,10 @@ public class Recipe {
         this.connection = connection;
     }
 
-    public void addMenuToDatabase(int menuID) {
+    public void addRecipeToDatabase(int RecipeID) {
         String sql = "INSERT INTO Menus WHERE MenuID = ?";
         try (PreparedStatement statement = connection.prepareStatement(sql)) {
-            statement.setInt(1, menuID);
+            statement.setInt(1, RecipeID);
             int rowsInserted = statement.executeUpdate();
             if (rowsInserted > 0) {
                 System.out.println("Menu added successfully!");
@@ -26,10 +26,10 @@ public class Recipe {
             ex.printStackTrace();
         }
     }
-    public boolean removeMenuFromDatabase(int menuId) {
-        String sql = "DELETE FROM Menus WHERE MenuID = ?";
+    public boolean removeRecipeFromDatabase(int RecipeId) {
+        String sql = "DELETE FROM Menus WHERE RecipeID = ?";
         try (PreparedStatement statement = connection.prepareStatement(sql)) {
-            statement.setInt(1, menuId);
+            statement.setInt(1, RecipeId);
             int rowsDeleted = statement.executeUpdate();
             return rowsDeleted > 0;
         } catch (SQLException ex) {
@@ -38,11 +38,11 @@ public class Recipe {
         }
     }
 
-    public boolean editMenuName(int menuId, String newMenuName) {
-        String sql = "UPDATE Menus SET name = ? WHERE id = ?";
+    public boolean editRecipeName(int RecipeId, String newRecipeName) {
+        String sql = "UPDATE Recipe SET name = ? WHERE id = ?";
         try (PreparedStatement statement = connection.prepareStatement(sql)) {
-            statement.setString(1, newMenuName);
-            statement.setInt(2, menuId);
+            statement.setString(1, newRecipeName);
+            statement.setInt(2, RecipeId);
             int rowsUpdated = statement.executeUpdate();
             return rowsUpdated > 0;
         } catch (SQLException ex) {
@@ -50,5 +50,6 @@ public class Recipe {
             return false;
         }
     }
+
 
 }
