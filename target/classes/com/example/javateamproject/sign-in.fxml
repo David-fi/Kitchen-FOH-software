@@ -27,13 +27,16 @@
                             <Font name="Adelle Sans Devanagari Extrabold" size="25.0" />
                         </font>
                     </Label>
-                    <TextArea prefHeight="55.0" prefWidth="343.0" />
+                    <TextArea prefHeight="55.0" prefWidth="343.0">
+                     <font>
+                        <Font size="20.0" />
+                     </font></TextArea>
                     <Label prefHeight="75.0" prefWidth="140.0" text="Password:" textFill="WHITE">
                         <font>
                             <Font name="Adelle Sans Devanagari Extrabold" size="25.0" />
                         </font>
                     </Label>
-                    <PasswordField prefHeight="55.0" prefWidth="343.0">
+                    <PasswordField prefHeight="77.0" prefWidth="343.0">
                      <VBox.margin>
                         <Insets />
                      </VBox.margin></PasswordField>
