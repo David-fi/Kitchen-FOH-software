@@ -49,7 +49,7 @@ public class Recipe {
             statement.setString(1, newRecipeName);
             statement.setString(2, Description);
             statement.setString(3, ApprovalStatus);
-            statement.setString(5, Comments);
+            statement.setString(4, Comments);
             statement.setInt(5, RecipeId);
             int rowsUpdated = statement.executeUpdate();
             return rowsUpdated > 0;
