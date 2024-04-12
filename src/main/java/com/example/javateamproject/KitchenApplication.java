@@ -18,7 +18,7 @@ public class KitchenApplication extends Application {
             stage.setScene(scene);
             stage.setResizable(false);
             stage.show();
-
+            stage.isFocused();
         } catch(Exception e) {
             e.printStackTrace();
         }
@@ -26,5 +26,4 @@ public class KitchenApplication extends Application {
     public static void main(String[] args) {
         launch();
     }
-    
 }
