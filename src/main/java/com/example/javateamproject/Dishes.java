@@ -5,17 +5,17 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class Menu {
+public class Dishes {
     public Connection connection;
 
-    public Menu(Connection connection) {
-        this.connection = connection;
+    public Dishes(Connection connection) {
+        this.connection = connection; //To implement a connection
     }
 
-    public void addMenuToDatabase(int menuID) {
-        String sql = "INSERT INTO Menus WHERE MenuID = ?";
+    public void addDishesToDatabase(int DishesID) {
+        String sql = "INSERT INTO Dishes WHERE DishesID = ?";
         try (PreparedStatement statement = connection.prepareStatement(sql)) {
-            statement.setInt(1, menuID);
+            statement.setInt(1, DishesID);
             int rowsInserted = statement.executeUpdate();
             if (rowsInserted > 0) {
                 System.out.println("Menu added successfully!");
@@ -26,10 +26,10 @@ public class Menu {
             ex.printStackTrace();
         }
     }
-    public boolean removeMenuFromDatabase(int menuId) {
-        String sql = "DELETE FROM Menus WHERE MenuID = ?";
+    public boolean removeDishesFromDatabase(int DishesId) {
+        String sql = "DELETE FROM Menus WHERE DishesID = ?";
         try (PreparedStatement statement = connection.prepareStatement(sql)) {
-            statement.setInt(1, menuId);
+            statement.setInt(1, DishesId);
             int rowsDeleted = statement.executeUpdate();
             return rowsDeleted > 0;
         } catch (SQLException ex) {
@@ -38,11 +38,11 @@ public class Menu {
         }
     }
 
-    public boolean editMenuName(int menuId, String newMenuName) {
-        String sql = "UPDATE Menus SET name = ? WHERE id = ?";
+    public boolean editDishes(int DishesId, String newDishesName) {
+        String sql = "UPDATE Dishes SET name = ? WHERE id = ?";
         try (PreparedStatement statement = connection.prepareStatement(sql)) {
-            statement.setString(1, newMenuName);
-            statement.setInt(2, menuId);
+            statement.setString(1, newDishesName);
+            statement.setInt(2, DishesId);
             int rowsUpdated = statement.executeUpdate();
             return rowsUpdated > 0;
         } catch (SQLException ex) {
