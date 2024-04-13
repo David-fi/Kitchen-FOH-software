@@ -18,7 +18,7 @@ public class KitchenApplication extends Application {
             stage.setScene(scene);
             stage.setResizable(false);
             stage.show();
-            stage.isFocused();
+
         } catch(Exception e) {
             e.printStackTrace();
         }
