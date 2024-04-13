@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="anchorPane" prefHeight="0.0" prefWidth="400.0" style="-fx-background-color: linear-gradient(to right bottom, #42E695, #32B2B8);" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javateamproject.LoginController">
+    <children>
+      <HBox alignment="CENTER_RIGHT" prefHeight="18.0" prefWidth="633.0" spacing="10.0" styleClass="background-colour" stylesheets="@StyleElements/style.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <Button contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" onAction="#handleCloseButton" text="Button">
+               <graphic>
+                  <ImageView fitHeight="19.0" fitWidth="17.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@StyleElements/Cross.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+            </Button>
+         </children>
+      </HBox>
+      <VBox layoutY="109.0" prefHeight="489.0" prefWidth="233.0" AnchorPane.bottomAnchor="-0.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="200.0" AnchorPane.topAnchor="40.0">
+         <children>
+              <ImageView fitHeight="236.0" fitWidth="233.0" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                      <Image url="@StyleElements/LancasterWhite.png" />
+                  </image>
+              </ImageView>
+            <VBox prefHeight="206.0" prefWidth="183.0" spacing="10.0">
+               <children>
+                    <Label prefHeight="24.0" prefWidth="325.0" text="Username:" textFill="WHITE">
+                        <font>
+                            <Font name="Adelle Sans Devanagari Extrabold" size="25.0" />
+                        </font>
+                    </Label>
+                    <TextArea fx:id="usernameField" prefColumnCount="1" prefHeight="4.0" prefRowCount="1" prefWidth="233.0">
+                     <font>
+                        <Font size="10.0" />
+                     </font>
+                  </TextArea>
+                    <Label prefHeight="50.0" prefWidth="376.0" text="Password:" textFill="WHITE">
+                        <font>
+                            <Font name="Adelle Sans Devanagari Extrabold" size="25.0" />
+                        </font>
+                    </Label>
+                    <PasswordField fx:id="passwordField" prefHeight="138.0" prefWidth="233.0">
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </PasswordField>
+                    <Button mnemonicParsing="false" onAction="#handleLoginButton" prefHeight="134.0" prefWidth="489.0" stylesheets="@StyleElements/style.css" text="Sign In" textFill="WHITE">
+                     <font>
+                        <Font name="Adelle Sans Devanagari Heavy" size="25.0" />
+                     </font>
+                     <VBox.margin>
+                        <Insets top="25.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </VBox>
+         </children>
+      </VBox>
+    </children>
+</AnchorPane>
