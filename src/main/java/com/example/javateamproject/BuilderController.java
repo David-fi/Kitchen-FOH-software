@@ -94,6 +94,87 @@ public class BuilderController {
         stage.show();
     }
 
+    public void switchToCreateRecipe(ActionEvent event) throws IOException {
+        // Switches to create recipe page.
+        Parent root = FXMLLoader.load(getClass().getResource("create-recipe-page.fxml"));
+        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void switchToDeleteRecipe(ActionEvent event) throws IOException {
+        // Switches to delete recipe page.
+        Parent root = FXMLLoader.load(getClass().getResource("delete-recipe-page.fxml"));
+        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void switchToUpdateRecipe(ActionEvent event) throws IOException {
+        // Switches to update recipe page.
+        Parent root = FXMLLoader.load(getClass().getResource("update-recipe-page.fxml"));
+        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void switchToCreateDish(ActionEvent event) throws IOException {
+        // Switches to create dish page.
+        Parent root = FXMLLoader.load(getClass().getResource("create-dish-page.fxml"));
+        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void switchToDeleteDish(ActionEvent event) throws IOException {
+        // Switches to delete dish page.
+        Parent root = FXMLLoader.load(getClass().getResource("delete-dish-page.fxml"));
+        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void switchToUpdateDish(ActionEvent event) throws IOException {
+        // Switches to update dish page.
+        Parent root = FXMLLoader.load(getClass().getResource("update-dish-page.fxml"));
+        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void switchToCreateMenu(ActionEvent event) throws IOException {
+        // Switches to create menu page.
+        Parent root = FXMLLoader.load(getClass().getResource("create-menu-page.fxml"));
+        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void switchToDeleteMenu(ActionEvent event) throws IOException {
+        // Switches to delete menu page.
+        Parent root = FXMLLoader.load(getClass().getResource("delete-menu-page.fxml"));
+        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void switchToUpdateMenu(ActionEvent event) throws IOException {
+        // Switches to update menu page.
+        Parent root = FXMLLoader.load(getClass().getResource("update-recipe-page.fxml"));
+        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
     public void showLoginWindow(ActionEvent event) throws IOException {
         // Shows login page in a new window.
         if (signinButton.getText().equals("Sign in")){

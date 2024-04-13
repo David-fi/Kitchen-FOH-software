@@ -5,6 +5,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -14,16 +15,20 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javateamproject.HomeController">
     <children>
-        <AnchorPane layoutX="201.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="201.0" AnchorPane.rightAnchor="-1.0" AnchorPane.topAnchor="0.0">
+        <AnchorPane layoutX="200.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
                 <Label alignment="CENTER" text="Designed and developed by TechformIT © 2024" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
-            <Text layoutX="57.0" layoutY="88.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Delete Dish" wrappingWidth="200.00000000000006">
+            <TextArea layoutX="147.0" layoutY="200.0" prefHeight="40.0" prefWidth="300.0" promptText="Enter Your DishID" />
+            <TextField layoutX="147.0" layoutY="270.0" prefHeight="45.0" prefWidth="300.0" promptText="Enter Dish Name" />
+            <TextArea layoutX="147.0" layoutY="340.0" prefHeight="40.0" prefWidth="300.0" promptText="Enter RecipeID included in this dish" />
+            <TextField layoutX="147.0" layoutY="398.0" prefHeight="45.0" prefWidth="300.0" promptText="Enter PhotoPath" />
+            <TextField layoutX="147.0" layoutY="468.0" prefHeight="45.0" prefWidth="300.0" promptText="Enter Prepration Time" />
+            <Text layoutX="39.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Create Dish" wrappingWidth="200.00000000000006">
                <font>
                   <Font size="30.0" />
                </font>
             </Text>
-            <TextArea layoutX="270.0" layoutY="306.0" prefHeight="40.0" prefWidth="300.0" promptText="Enter the DishID that you wish to delete" />
-            <Button layoutX="577.0" layoutY="378.0" mnemonicParsing="false" text="Submit" />
+            <Button layoutX="499.0" layoutY="543.0" mnemonicParsing="false" text="Submit" />
             </children>
         </AnchorPane>
         <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="background-colour" stylesheets="@StyleElements/style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="880.0" AnchorPane.topAnchor="0.0">
@@ -33,7 +38,7 @@
                         <Separator layoutX="-49.0" layoutY="143.0" prefWidth="200.0" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
                         <ButtonBar prefHeight="40.0" prefWidth="200.0">
                             <buttons>
-                                <Button alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#switchToSignIn" prefHeight="29.0" prefWidth="100.0" text="Sign in" textFill="WHITE">
+                                <Button alignment="CENTER_RIGHT" mnemonicParsing="false" onAction="#showLoginWindow" prefHeight="29.0" prefWidth="100.0" text="Sign in" textFill="WHITE">
                                     <font>
                                         <Font size="15.0" />
                                     </font>
