@@ -15,7 +15,7 @@ public class Dishes {
     }
 
     public void addDishesToDatabase(int DishesID,String Name, int RecipeID, String PhotoPath,int PreparationTime) {
-        String sql = "INSERT INTO Dishes WHERE DishID = ?AND Name=? AND RecipeID=? AND PhotoPath=?";
+        String sql = "INSERT INTO Dishes WHERE DishID = ?AND Name=? AND RecipeID=? AND PhotoPath=? AND PreparationTime=?";
         try (PreparedStatement statement = connection.prepareStatement(sql)) {
             statement.setInt(1, DishesID);
             statement.setString(2, Name);

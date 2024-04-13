@@ -43,7 +43,7 @@ public class Recipe {
         }
     }
 
-    public boolean editRecipeName(int RecipeId, String newRecipeName, String Description,String ApprovalStatus,String Comments) {
+    public boolean editRecipe(int RecipeId, String newRecipeName, String Description,String ApprovalStatus,String Comments) {
         String sql = "UPDATE Recipe SET Name = ? AND Description=? AND Status=? AND Comments=? WHERE RecipeId = ?";
         try (PreparedStatement statement = connection.prepareStatement(sql)) {
             statement.setString(1, newRecipeName);

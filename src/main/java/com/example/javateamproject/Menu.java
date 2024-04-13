@@ -29,7 +29,7 @@ public class Menu {
         }
     }
     public void addDishesToMenu(int menuID,int DishID) {
-        String sql = "INSERT INTO MenuDishes WHERE MenuID = ?,WHERE DishID= ?";
+        String sql = "INSERT INTO MenuDishes WHERE MenuID = ? AND DishID= ?";
         try (PreparedStatement statement = connection.prepareStatement(sql)) {
             statement.setInt(1, menuID);
             statement.setInt(2, DishID);
@@ -43,10 +43,11 @@ public class Menu {
             ex.getMessage();
         }
     }
-    public void removeDishesFromMenu(int DishID) {
-        String sql = "DELETE FROM MenuDishes WHERE MenuID = ?";
+    public void removeDishesFromMenu(int MenuID, int DishID) {
+        String sql = "DELETE FROM MenuDishes WHERE MenuID = ? AND DishID=?";
         try (PreparedStatement statement = connection.prepareStatement(sql)) {
-            statement.setInt(1,DishID);
+            statement.setInt(1,MenuID);
+            statement.setInt(2, DishID);
             int rowsInserted = statement.executeUpdate();
             if (rowsInserted > 0) {
                 System.out.println("Menu added successfully!");
