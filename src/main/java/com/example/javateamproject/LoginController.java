@@ -87,7 +87,7 @@ public class LoginController {
     }
 
     public void showAlertWindow (String message) throws Exception {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("alert-page.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("alert.fxml"));
         Parent root = loader.load();
         AlertController controller = loader.getController();
         controller.setMessage(message);
