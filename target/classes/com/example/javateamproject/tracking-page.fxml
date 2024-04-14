@@ -150,7 +150,7 @@
                                         </Button>
                                     </children>
                                 </HBox>
-                                <TableView prefHeight="271.0" prefWidth="452.0" style="-fx-background-radius: 10px;" styleClass="gradient-border" stylesheets="@StyleElements/style.css">
+                                <TableView fx:id="" prefHeight="271.0" prefWidth="452.0" style="-fx-background-radius: 10px;" styleClass="gradient-border" stylesheets="@StyleElements/style.css">
                                     <columns>
                                         <TableColumn prefWidth="43.44110107421875" text="ID" />
                                         <TableColumn prefWidth="138.31185913085938" text="Name" />
@@ -224,14 +224,13 @@
                                         </Button>
                                     </children>
                                 </HBox>
-                                <TableView prefHeight="422.0" prefWidth="480.0" style="-fx-background-radius: 10px;" styleClass="gradient-border" stylesheets="@StyleElements/style.css">
+                                <TableView fx:id="table_users" prefHeight="422.0" prefWidth="480.0" style="-fx-background-radius: 10px;" styleClass="gradient-border" stylesheets="@StyleElements/style.css">
                                     <columns>
-                                        <TableColumn minWidth="5.5704345703125" prefWidth="27.66168212890625" text="ID" />
-                                        <TableColumn prefWidth="89.36309814453125" text="Waste" />
-                                        <TableColumn prefWidth="67.4735107421875" text="Quantity" />
-                                        <TableColumn prefWidth="81.67486572265625" text="Date" />
-                                        <TableColumn prefWidth="53.55126953125" text="Time" />
-                                        <TableColumn prefWidth="207.44866943359375" text="Reason" />
+                                        <TableColumn fx:id="col_id" minWidth="5.5704345703125" prefWidth="61.0" text="WasteID" />
+                                        <TableColumn fx:id="col_ingredients_id" prefWidth="82.5" text="IngredientID" />
+                                        <TableColumn fx:id="col_quantity" prefWidth="67.5" text="Quantity" />
+                                        <TableColumn fx:id="col_date_logged" prefWidth="120.0" text="Date" />
+                                        <TableColumn fx:id="col_reason" prefWidth="143.5" text="Reason" />
                                     </columns>
                                     <VBox.margin>
                                         <Insets />

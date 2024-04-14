@@ -56,6 +56,37 @@ public class SqlConnection {
         return list;
     }
 
+    public static ObservableList<WasteEntry> getWasteData(){
 
+        Connection conn = ConnectDb();
+        ObservableList<WasteEntry> list = FXCollections.observableArrayList();
+
+        try{
+            PreparedStatement ps = conn.prepareStatement("SELECT " +
+                    "WasteID, " +
+                    "IngredientID, " +
+                    "Quantity, " +
+                    "Reason, " +
+                    "DateLogged, " +
+                    "WasteTypeID " +
+                    "FROM Waste;");
+            ResultSet rs = ps.executeQuery();
+
+
+            while(rs.next()){
+                list.add(new WasteEntry((
+                        rs.getInt("WasteID")),
+                        rs.getInt("IngredientID"),
+                        rs.getDouble("Quantity"),
+                        rs.getString("Reason"),
+                        rs.getDate("DateLogged").toLocalDate()));
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+
+        return list;
+    }
 
 }
