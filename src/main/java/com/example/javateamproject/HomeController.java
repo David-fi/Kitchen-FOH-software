@@ -9,6 +9,8 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextArea;
+import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Modality;
@@ -16,6 +18,7 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
 import java.util.ResourceBundle;
 public class HomeController  {
     @FXML
@@ -26,6 +29,17 @@ public class HomeController  {
     private Label usernameLabel;
     @FXML
     private ImageView signinImage;
+    @FXML
+    private TextArea CreateDishEnterDishID;
+    @FXML
+    private TextField CreateDishEnterDishName;
+    @FXML
+    private TextArea CreateDishEnterRecipeID;
+    @FXML
+    private TextField CreateDishEnterPhotoPath;
+    @FXML
+    private TextField CreateDishEnterPreparationTime;
+
 
     public void initialize() {
         // Checks if user is already signed in when page is loaded.
@@ -151,4 +165,6 @@ public class HomeController  {
 
     public void switchToSignIn(ActionEvent actionEvent) {
     }
+
+
 }
