@@ -1,18 +1,88 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javateamproject.OrdersTablePage">
+<AnchorPane prefHeight="100.0" prefWidth="300.0" style="-fx-background-radius: 10px;" styleClass="gradient-border" stylesheets="@StyleElements/style.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javateamproject.Order">
    <children>
-      <Label layoutX="225.0" layoutY="8.0" text="[Table No]">
-         <font>
-            <Font name="Arial Rounded MT Bold" size="30.0" />
-         </font>
-      </Label>
-      <ScrollPane layoutX="180.0" layoutY="63.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: 10px;" styleClass="gradient-border" stylesheets="@StyleElements/style.css" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="50.0" />
+      <VBox prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox alignment="CENTER" prefHeight="25.0" prefWidth="280.0" spacing="10.0">
+               <children>
+                  <Label fx:id="dishLabel" text="[Dish]">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="10.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="quantityLabel" text="[Quantity]">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="10.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="orderIDLabel" text="[OrderID]">
+                     <font>
+                        <Font name="Arial Rounded MT Bold" size="10.0" />
+                     </font>
+                  </Label>
+                  <ImageView fitHeight="18.0" fitWidth="22.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@StyleElements/Complete.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </HBox>
+            <Separator prefWidth="200.0">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+            </Separator>
+            <HBox prefHeight="100.0" prefWidth="200.0" spacing="10.0">
+               <children>
+                  <VBox>
+                     <children>
+                        <Label text="Special request">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="8.0" />
+                           </font>
+                        </Label>
+                        <TextArea fx:id="specialRequestArea" editable="false" prefHeight="54.0" prefWidth="175.0">
+                           <font>
+                              <Font size="8.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="5.0" />
+                           </VBox.margin>
+                        </TextArea>
+                     </children>
+                  </VBox>
+                  <VBox>
+                     <children>
+                        <Label text="Dietary">
+                           <font>
+                              <Font name="Arial Rounded MT Bold" size="8.0" />
+                           </font>
+                        </Label>
+                        <TextArea fx:id="dietaryArea" editable="false" prefHeight="59.0" prefWidth="182.0">
+                           <font>
+                              <Font size="8.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="5.0" />
+                           </VBox.margin>
+                        </TextArea>
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
    </children>
 </AnchorPane>
