@@ -1,12 +1,16 @@
 package com.example.javateamproject;
+import javafx.collections.ObservableList;
+import javafx.collections.transformation.FilteredList;
+import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
+import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.stage.Modality;
@@ -14,8 +18,14 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 import java.io.IOException;
+import java.net.URL;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.time.LocalDate;
+import java.util.ResourceBundle;
 
-public class CreationController {
+public class CreationController implements Initializable {
     @FXML
     private Button signinButton;
     @FXML
@@ -24,6 +34,34 @@ public class CreationController {
     private Label usernameLabel;
     @FXML
     private ImageView signinImage;
+
+    @FXML
+    private TableColumn<users, Integer> col_id;
+
+    @FXML
+    private TableColumn<users, String> col_name;
+
+    @FXML
+    private TableColumn<users, LocalDate> col_weekstartdate;
+
+    @FXML
+    private TableView<users> table_users;
+
+    @FXML
+    private TextField keywordTextField;
+
+    ObservableList<users> listM;
+
+//    int index = -1;
+
+    Connection conn = null;
+
+    ResultSet rs = null;
+
+    PreparedStatement pst = null;
+
+
+
 
     public void initialize() {
         // Checks if user is already signed in when page is loaded.
@@ -145,5 +183,43 @@ public class CreationController {
             signinButton.setText("Sign out");
             signinImage.setImage(new Image(getClass().getResourceAsStream("/com/example/javateamproject/StyleElements/Logout.png")));
         }
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+        col_id.setCellValueFactory(new PropertyValueFactory<users,Integer>("id"));
+        col_weekstartdate.setCellValueFactory(new PropertyValueFactory<users,LocalDate>("WeekStartDate"));
+
+        col_name.setCellValueFactory(new PropertyValueFactory<users,String>("Name"));
+
+        listM = SqlConnection.getDatausers();
+        table_users.setItems(listM);
+
+        FilteredList<users> filteredData = new FilteredList<>(listM, b->true);
+
+        keywordTextField.textProperty().addListener((observable,oldValue,newValue) -> {
+            filteredData.setPredicate(users -> {
+                if(newValue.isEmpty() || newValue.isBlank() || newValue == null){
+                    return true;
+                }
+                String specificKeyword = newValue.toLowerCase();
+
+                if(users.getName().toLowerCase().indexOf(specificKeyword) > -1){
+                    return true;
+                } else if (String.valueOf(users.getId()).toLowerCase().indexOf(specificKeyword) > -1){
+                    return true;
+                } else if(users.getWeekStartDate().toString().indexOf(specificKeyword) > -1){
+                    return true;
+                } else
+                    return false;
+            });
+        });
+
+        SortedList<users> sortedData = new SortedList<>(filteredData);
+
+        //update table with sorted result and bind it
+        sortedData.comparatorProperty().bind(table_users.comparatorProperty());
+
+        table_users.setItems(sortedData);
     }
 }

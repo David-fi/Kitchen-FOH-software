@@ -6,6 +6,8 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -151,7 +153,7 @@
                               </Label>
                               <HBox prefHeight="28.0" prefWidth="179.0" style="-fx-border-color: grey; -fx-border-radius: 5px;">
                                  <children>
-                                    <TextField prefHeight="26.0" prefWidth="369.0" />
+                                    <TextField fx:id="keywordTextField" prefHeight="26.0" prefWidth="369.0" />
                                     <Button contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" prefHeight="0.0" prefWidth="0.0" text="Button">
                                        <graphic>
                                           <ImageView fitHeight="17.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
@@ -167,6 +169,15 @@
                                  <VBox.margin>
                                     <Insets />
                                  </VBox.margin>
+                                 <content>
+                                    <TableView fx:id="table_users" prefHeight="230.0" prefWidth="345.0">
+                                      <columns>
+                                        <TableColumn fx:id="col_id" prefWidth="75.0" text="MenuID" />
+                                        <TableColumn fx:id="col_weekstartdate" prefWidth="119.20001983642578" text="WeekStartDate" />
+                                          <TableColumn fx:id="col_name" prefWidth="158.4000701904297" text="Name" />
+                                      </columns>
+                                    </TableView>
+                                 </content>
                               </ScrollPane>
                            </children>
                         </VBox>
