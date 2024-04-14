@@ -148,4 +148,7 @@ public class HomeController  {
             signinImage.setImage(new Image(getClass().getResourceAsStream("/com/example/javateamproject/StyleElements/Logout.png")));
         }
     }
+
+    public void switchToSignIn(ActionEvent actionEvent) {
+    }
 }

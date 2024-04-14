@@ -40,6 +40,31 @@ public class TrackingController {
         stage.show();
     }
 
+    public void switchToAddWaste(ActionEvent event) throws IOException {
+        // Switches to add waste page.
+        Parent root = FXMLLoader.load(getClass().getResource("add-waste-page.fxml"));
+        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+    public void switchToDeleteWaste(ActionEvent event) throws IOException {
+        // Switches to add waste page.
+        Parent root = FXMLLoader.load(getClass().getResource("delete-waste-page.fxml"));
+        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+    public void switchToEditWaste(ActionEvent event) throws IOException {
+        // Switches to add waste page.
+        Parent root = FXMLLoader.load(getClass().getResource("edit-waste-page.fxml"));
+        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
+    }
+
     public void switchToOrder(ActionEvent event) throws IOException {
         // Switches to order page.
         Parent root = FXMLLoader.load(getClass().getResource("order-page.fxml"));
