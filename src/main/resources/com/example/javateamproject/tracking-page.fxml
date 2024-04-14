@@ -1,25 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.chart.CategoryAxis?>
-<?import javafx.scene.chart.LineChart?>
-<?import javafx.scene.chart.NumberAxis?>
-<?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ButtonBar?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.control.ScrollPane?>
-<?import javafx.scene.control.Separator?>
-<?import javafx.scene.control.TableColumn?>
-<?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.Image?>
-<?import javafx.scene.image.ImageView?>
-<?import javafx.scene.layout.AnchorPane?>
-<?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.VBox?>
-<?import javafx.scene.text.Font?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javateamproject.HomeController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="720.0" prefWidth="1080.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javateamproject.TrackingController">
     <children>
         <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="background-colour" stylesheets="@StyleElements/style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="880.0" AnchorPane.topAnchor="0.0">
             <children>
@@ -251,8 +239,8 @@
                                 </TableView>
                                 <HBox alignment="CENTER" spacing="5.0">
                                     <children>
-                                        <Button alignment="CENTER" mnemonicParsing="false" prefHeight="47.0" prefWidth="110.0" style="-fx-background-color: #496ba4;" text="Add" textFill="WHITE" />
-                                        <Button alignment="CENTER" contentDisplay="RIGHT" minWidth="0.0" mnemonicParsing="false" prefHeight="47.0" prefWidth="110.0" style="-fx-background-color: #a34953;" text="Delete" textFill="WHITE">
+                                        <Button alignment="CENTER" mnemonicParsing="false" onAction="#switchToAddWaste" prefHeight="47.0" prefWidth="110.0" style="-fx-background-color: #496ba4;" text="Add" textFill="WHITE" />
+                                        <Button alignment="CENTER" contentDisplay="RIGHT" minWidth="0.0" mnemonicParsing="false" onAction="#switchToDeleteWaste" prefHeight="47.0" prefWidth="110.0" style="-fx-background-color: #a34953;" text="Delete" textFill="WHITE">
                                             <graphic>
                                                 <ImageView fitHeight="38.0" fitWidth="167.0" pickOnBounds="true" preserveRatio="true">
                                                     <image>
@@ -261,7 +249,7 @@
                                                 </ImageView>
                                             </graphic>
                                         </Button>
-                                        <Button alignment="CENTER" contentDisplay="RIGHT" mnemonicParsing="false" prefHeight="47.0" prefWidth="110.0" style="-fx-background-color: #48a171;" text="Update" textFill="WHITE">
+                                        <Button alignment="CENTER" contentDisplay="RIGHT" mnemonicParsing="false" onAction="#switchToEditWaste" prefHeight="47.0" prefWidth="110.0" style="-fx-background-color: #48a171;" text="Update" textFill="WHITE">
                                             <graphic>
                                                 <ImageView fitHeight="38.0" fitWidth="73.0" pickOnBounds="true" preserveRatio="true">
                                                     <image>

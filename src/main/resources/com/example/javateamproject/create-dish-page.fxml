@@ -18,17 +18,17 @@
         <AnchorPane layoutX="200.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
                 <Label alignment="CENTER" text="Designed and developed by TechformIT © 2024" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
-            <TextArea layoutX="147.0" layoutY="200.0" prefHeight="40.0" prefWidth="300.0" promptText="Enter Your DishID" />
-            <TextField layoutX="147.0" layoutY="270.0" prefHeight="45.0" prefWidth="300.0" promptText="Enter Dish Name" />
-            <TextArea layoutX="147.0" layoutY="340.0" prefHeight="40.0" prefWidth="300.0" promptText="Enter RecipeID included in this dish" />
-            <TextField layoutX="147.0" layoutY="398.0" prefHeight="45.0" prefWidth="300.0" promptText="Enter PhotoPath" />
-            <TextField layoutX="147.0" layoutY="468.0" prefHeight="45.0" prefWidth="300.0" promptText="Enter Prepration Time" />
+            <TextArea fx:id="CreateDishEnterDishID" layoutX="147.0" layoutY="200.0" prefHeight="40.0" prefWidth="300.0" promptText="Enter Your DishID" />
+            <TextField fx:id="CreateDishEnterDishName" layoutX="147.0" layoutY="270.0" prefHeight="45.0" prefWidth="300.0" promptText="Enter Dish Name" />
+            <TextArea fx:id="CreateDishEnterRecipeID" layoutX="147.0" layoutY="340.0" prefHeight="40.0" prefWidth="300.0" promptText="Enter RecipeID included in this dish" />
+            <TextField fx:id="CreateDishEnterPhotoPath" layoutX="147.0" layoutY="398.0" prefHeight="45.0" prefWidth="300.0" promptText="Enter PhotoPath" />
+            <TextField fx:id="CreateDishEnterPreparationTime" layoutX="147.0" layoutY="468.0" prefHeight="45.0" prefWidth="300.0" promptText="Enter Preparation Time" />
             <Text layoutX="39.0" layoutY="68.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Create Dish" wrappingWidth="200.00000000000006">
                <font>
                   <Font size="30.0" />
                </font>
             </Text>
-            <Button layoutX="499.0" layoutY="543.0" mnemonicParsing="false" text="Submit" />
+            <Button fx:id="SubmitNewDishtoDatabase" layoutX="499.0" layoutY="543.0" mnemonicParsing="false" text="Submit" />
             </children>
         </AnchorPane>
         <AnchorPane prefHeight="200.0" prefWidth="200.0" styleClass="background-colour" stylesheets="@StyleElements/style.css" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="880.0" AnchorPane.topAnchor="0.0">
