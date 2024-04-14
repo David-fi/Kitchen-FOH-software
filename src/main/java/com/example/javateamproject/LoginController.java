@@ -55,7 +55,6 @@ public class LoginController {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         } finally {
-            // Close resources in the finally block
             try {
                 if (resultSet != null) {
                     resultSet.close();
@@ -67,7 +66,6 @@ public class LoginController {
                     connection.close();
                 }
             } catch (SQLException e) {
-                // Log or handle the exception if closing resources fails
                 e.printStackTrace();
             }
         }
