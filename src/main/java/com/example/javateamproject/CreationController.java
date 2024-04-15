@@ -71,8 +71,6 @@ public class CreationController {
     @FXML
 
     private TableView<usersTwo> table_dish;
-
-
     @FXML
 
     private TextField keywordTextFieldTwo;

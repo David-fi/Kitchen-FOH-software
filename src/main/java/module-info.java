@@ -4,6 +4,7 @@ module com.example.javateamproject {
     requires java.sql;
     requires jdk.httpserver;
     requires java.desktop;
+    requires BOHLibrary;
     //requires BOHLibrary;
 
 

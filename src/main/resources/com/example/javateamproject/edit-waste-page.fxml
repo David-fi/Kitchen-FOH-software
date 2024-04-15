@@ -15,10 +15,9 @@
         <AnchorPane layoutX="200.0" prefHeight="720.0" prefWidth="859.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
                 <Label alignment="CENTER" text="Designed and developed by TechformIT © 2024" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
-                <TextArea layoutX="230.0" layoutY="252.0" prefHeight="40.0" prefWidth="300.0" promptText="Enter the WasteID" />
-                <TextArea layoutX="230.0" layoutY="304.0" prefHeight="40.0" prefWidth="300.0" promptText="New Quantity" />
-                <TextArea layoutX="230.0" layoutY="360.0" prefHeight="40.0" prefWidth="300.0" promptText="Date" />
-                <Button layoutX="349.0" layoutY="437.0" mnemonicParsing="false" text="Submit" />
+                <TextArea fx:id="currentWasteID" layoutX="230.0" layoutY="252.0" prefHeight="40.0" prefWidth="300.0" promptText="Enter the WasteID" />
+                <TextArea fx:id="newQuantity" layoutX="230.0" layoutY="304.0" prefHeight="40.0" prefWidth="300.0" promptText="New Quantity" />
+                <Button layoutX="349.0" layoutY="437.0" mnemonicParsing="false" onAction="#updateWaste" text="Submit" />
                 <Text layoutX="247.0" layoutY="187.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Edit Waste Quantity" wrappingWidth="263.50000000000006">
                     <font>
                         <Font size="30.0" />
