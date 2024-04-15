@@ -255,6 +255,16 @@
                                  <VBox.margin>
                                     <Insets />
                                  </VBox.margin>
+                                 <content>
+                                    <TableView fx:id="table_menu" prefHeight="211.0" prefWidth="770.0">
+                                      <columns>
+                                        <TableColumn fx:id="col_MenuId" prefWidth="75.0" text="MenuID" />
+                                        <TableColumn fx:id="col_date" prefWidth="168.79998779296875" text="WeekStartDate" />
+                                          <TableColumn fx:id="col_nameTwo" prefWidth="209.60003662109375" text="Name" />
+                                          <TableColumn fx:id="col_role" prefWidth="312.7998962402344" text="Role" />
+                                      </columns>
+                                    </TableView>
+                                 </content>
                               </ScrollPane>
                            </children>
                         </VBox>

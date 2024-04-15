@@ -5,7 +5,6 @@ import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -18,12 +17,10 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 import java.io.IOException;
-import java.net.URL;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.time.LocalDate;
-import java.util.ResourceBundle;
 
 public class CreationController {
     @FXML
@@ -36,36 +33,40 @@ public class CreationController {
     private ImageView signinImage;
 
     @FXML
-    private TableColumn<users,Integer> col_RecipeId;
+    private TableColumn<users, Integer> col_RecipeId;
 
     @FXML
-    private TableColumn<users,String> col_FoodName;
+    private TableColumn<users, String> col_FoodName;
 
     @FXML
-    private TableColumn<users,String> col_desc;
+    private TableColumn<users, String> col_desc;
 
     @FXML
-    private TableColumn<users,String> col_name;
+    private TableColumn<users, String> col_name;
 
     @FXML
-    private TableColumn<users,String> col_status;
+    private TableColumn<users, String> col_status;
 
     @FXML
 
-    private TableView<users>table_recipe;
+    private TableView<users> table_recipe;
+
+    @FXML
+
+    private TableView<usersThree> table_menu;
 
 
     @FXML
-    private TableColumn<usersTwo,Integer> col_DishId;
+    private TableColumn<usersTwo, Integer> col_DishId;
 
     @FXML
-    private TableColumn<usersTwo,String> col_FoodNameTwo;
+    private TableColumn<usersTwo, String> col_FoodNameTwo;
 
     @FXML
-    private TableColumn<usersTwo,Integer> col_RecipeIdTwo;
+    private TableColumn<usersTwo, Integer> col_RecipeIdTwo;
 
     @FXML
-    private TableColumn<usersTwo,Integer> col_PreparationTimeTwo;
+    private TableColumn<usersTwo, Integer> col_PreparationTimeTwo;
 
     @FXML
 
@@ -76,6 +77,23 @@ public class CreationController {
 
     private TextField keywordTextFieldTwo;
 
+    @FXML
+    private TableColumn<usersThree, Integer> col_MenuId;
+
+    @FXML
+    private TableColumn<usersThree, LocalDate> col_date;
+
+    @FXML
+    private TableColumn<usersThree, String> col_nameTwo;
+
+    @FXML
+    private TableColumn<usersThree, String> col_role;
+
+
+
+
+
+
 
     @FXML
     private TextField keywordTextField;
@@ -83,6 +101,10 @@ public class CreationController {
     ObservableList<users> listM;
 
     ObservableList<usersTwo> listD;
+
+    ObservableList<usersThree>listMenu;
+
+
 
 
 
@@ -183,6 +205,44 @@ public class CreationController {
                     return false;
             });
         });
+
+        col_MenuId.setCellValueFactory(new PropertyValueFactory<usersThree,Integer>("id"));
+
+        col_date.setCellValueFactory(new PropertyValueFactory<usersThree,LocalDate>("date"));
+
+        col_nameTwo.setCellValueFactory(new PropertyValueFactory<usersThree,String>("name"));
+
+        col_role.setCellValueFactory(new PropertyValueFactory<usersThree,String>("role"));
+
+        listMenu = SqlConnection.getMenuData();
+        table_menu.setItems(listMenu);
+
+//        listD = SqlConnection.getDishData();
+//        table_dish.setItems(listD);
+
+
+
+
+
+//        col_RecipeId.setCellValueFactory(new PropertyValueFactory<users,Integer>("id"));
+//
+//        col_FoodName.setCellValueFactory(new PropertyValueFactory<users,String>("FoodName"));
+//
+//        col_desc.setCellValueFactory(new PropertyValueFactory<users,String>("description"));
+//
+//        col_name.setCellValueFactory(new PropertyValueFactory<users,String>("Name"));
+//
+//        col_status.setCellValueFactory(new PropertyValueFactory<users,String>("Status"));
+//
+//
+//
+//
+//        listM = SqlConnection.getRecipeData();
+//        table_recipe.setItems(listM);
+
+
+
+
 //
 //
 //        SortedList<usersTwo> sortedDataTwo = new SortedList<>(filteredDataTwo);
