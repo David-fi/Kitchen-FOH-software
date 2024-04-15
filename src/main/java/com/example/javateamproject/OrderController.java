@@ -88,7 +88,7 @@ public class OrderController {
                 retrieveOrderedTables();
                 changeTableColor();
             }
-        }, 0, 15 * 1000);
+        }, 0, 1 * 1000);
     }
 
     public void switchToHome(ActionEvent event) throws IOException {

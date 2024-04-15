@@ -61,8 +61,9 @@ public class CreateMenuController {
             PreparedStatement statement = connection.prepareStatement(sql);
             {
                 statement.setInt(1, menuID);
-                statement.setInt(3, ChefID);
                 statement.setInt(2, WeekStartDate);
+                statement.setInt(3, ChefID);
+
                 int rowsInserted = statement.executeUpdate();
                 if (rowsInserted > 0) {
                     System.out.println("Menu added successfully!");

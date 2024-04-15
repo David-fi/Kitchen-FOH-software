@@ -50,16 +50,16 @@ public class UserController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        col_id.setCellValueFactory(new PropertyValueFactory<users,Integer>("id"));
-        col_weekstartdate.setCellValueFactory(new PropertyValueFactory<users,LocalDate>("WeekStartDate"));
+        col_id.setCellValueFactory(new PropertyValueFactory<users, Integer>("id"));
+        col_weekstartdate.setCellValueFactory(new PropertyValueFactory<users, LocalDate>("WeekStartDate"));
 
-        col_name.setCellValueFactory(new PropertyValueFactory<users,String>("Name"));
+        col_name.setCellValueFactory(new PropertyValueFactory<users, String>("Name"));
 
         listM = SqlConnection.getRecipeData();
         table_users.setItems(listM);
 
-        FilteredList<users> filteredData = new FilteredList<>(listM,b->true);
-
+        FilteredList<users> filteredData = new FilteredList<>(listM, b -> true);
+/*
         keywordTextField.textProperty().addListener((observable,oldValue,newValue) -> {
             filteredData.setPredicate(users -> {
                 if(newValue.isEmpty() || newValue.isBlank() || newValue == null){
@@ -80,11 +80,16 @@ public class UserController implements Initializable {
 
         SortedList<users> sortedData = new SortedList<>(filteredData);
 
-        update table with sorted result and bind it
+
         sortedData.comparatorProperty().bind(table_users.comparatorProperty());
 
         table_users.setItems(sortedData);
 
+/*
+    }
 
+}
+
+ */
     }
 }
