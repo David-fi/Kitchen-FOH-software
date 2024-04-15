@@ -60,23 +60,23 @@ public class UserController implements Initializable {
 
         FilteredList<users> filteredData = new FilteredList<>(listM,b->true);
 
-        keywordTextField.textProperty().addListener((observable,oldValue,newValue) -> {
-            filteredData.setPredicate(users -> {
-                if(newValue.isEmpty() || newValue.isBlank() || newValue == null){
-                    return true;
-                }
-                String specificKeyword = newValue.toLowerCase();
-
-                if(users.getName().toLowerCase().indexOf(specificKeyword) > -1){
-                    return true;
-                } else if (String.valueOf(users.getId()).toLowerCase().indexOf(specificKeyword) > -1){
-                    return true;
-                } else if(users.getWeekStartDate().toString().indexOf(specificKeyword) > -1){
-                    return true;
-                } else
-                    return false;
-            });
-        });
+//        keywordTextField.textProperty().addListener((observable,oldValue,newValue) -> {
+//            filteredData.setPredicate(users -> {
+//                if(newValue.isEmpty() || newValue.isBlank() || newValue == null){
+//                    return true;
+//                }
+//                String specificKeyword = newValue.toLowerCase();
+//
+//                if(users.getName().toLowerCase().indexOf(specificKeyword) > -1){
+//                    return true;
+//                } else if (String.valueOf(users.getId()).toLowerCase().indexOf(specificKeyword) > -1){
+//                    return true;
+//                } else if(users.getWeekStartDate().toString().indexOf(specificKeyword) > -1){
+//                    return true;
+//                } else
+//                    return false;
+//            });
+//        });
 
         SortedList<users> sortedData = new SortedList<>(filteredData);
 
