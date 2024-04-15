@@ -96,83 +96,173 @@ public class BuilderController {
 
     public void switchToCreateRecipe(ActionEvent event) throws IOException {
         // Switches to create recipe page.
-        Parent root = FXMLLoader.load(getClass().getResource("create-recipe-page.fxml"));
-        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+        if (LoginController.type != null && ("Chef".equals(LoginController.type) || "Sous".equals(LoginController.type) || "Head".equals(LoginController.type))) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("create-recipe-page.fxml"));
+            Parent root = loader.load();
+            Stage stage = new Stage();
+            stage.initStyle(StageStyle.TRANSPARENT);
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.setScene(new Scene(root));
+            stage.showAndWait();
+        } else {
+            try {
+                showAlertWindow("You do not have the right permissions.");
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     public void switchToDeleteRecipe(ActionEvent event) throws IOException {
         // Switches to delete recipe page.
-        Parent root = FXMLLoader.load(getClass().getResource("delete-recipe-page.fxml"));
-        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+        if (LoginController.type != null && ("Sous".equals(LoginController.type) || "Head".equals(LoginController.type))) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("delete-recipe-page.fxml"));
+            Parent root = loader.load();
+            Stage stage = new Stage();
+            stage.initStyle(StageStyle.TRANSPARENT);
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.setScene(new Scene(root));
+            stage.showAndWait();
+        } else {
+            try {
+                showAlertWindow("You do not have the right permissions.");
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     public void switchToUpdateRecipe(ActionEvent event) throws IOException {
         // Switches to update recipe page.
-        Parent root = FXMLLoader.load(getClass().getResource("update-recipe-page.fxml"));
-        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+        if (LoginController.type != null && ("Chef".equals(LoginController.type) || "Sous".equals(LoginController.type) || "Head".equals(LoginController.type))) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("update-recipe-page.fxml"));
+            Parent root = loader.load();
+            Stage stage = new Stage();
+            stage.initStyle(StageStyle.TRANSPARENT);
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.setScene(new Scene(root));
+            stage.showAndWait();
+        } else {
+            try {
+                showAlertWindow("You do not have the right permissions.");
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     public void switchToCreateDish(ActionEvent event) throws IOException {
         // Switches to create dish page.
-        Parent root = FXMLLoader.load(getClass().getResource("create-dish-page.fxml"));
-        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+        if (LoginController.type != null && ("Chef".equals(LoginController.type) || "Sous".equals(LoginController.type) || "Head".equals(LoginController.type))) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("create-dish-page.fxml"));
+            Parent root = loader.load();
+            Stage stage = new Stage();
+            stage.initStyle(StageStyle.TRANSPARENT);
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.setScene(new Scene(root));
+            stage.showAndWait();
+        } else {
+            try {
+                showAlertWindow("You do not have the right permissions.");
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     public void switchToDeleteDish(ActionEvent event) throws IOException {
         // Switches to delete dish page.
-        Parent root = FXMLLoader.load(getClass().getResource("delete-dish-page.fxml"));
-        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+        if (LoginController.type != null && ("Sous".equals(LoginController.type) || "Head".equals(LoginController.type))) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("delete-dish-page.fxml"));
+            Parent root = loader.load();
+            Stage stage = new Stage();
+            stage.initStyle(StageStyle.TRANSPARENT);
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.setScene(new Scene(root));
+            stage.showAndWait();
+        } else {
+            try {
+                showAlertWindow("You do not have the right permissions.");
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     public void switchToUpdateDish(ActionEvent event) throws IOException {
         // Switches to update dish page.
-        Parent root = FXMLLoader.load(getClass().getResource("update-dish-page.fxml"));
-        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+        if (LoginController.type != null && ("Chef".equals(LoginController.type) || "Sous".equals(LoginController.type) || "Head".equals(LoginController.type))) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("update-dish-page.fxml"));
+            Parent root = loader.load();
+            Stage stage = new Stage();
+            stage.initStyle(StageStyle.TRANSPARENT);
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.setScene(new Scene(root));
+            stage.showAndWait();
+        } else {
+            try {
+                showAlertWindow("You do not have the right permissions.");
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     public void switchToCreateMenu(ActionEvent event) throws IOException {
         // Switches to create menu page.
-        Parent root = FXMLLoader.load(getClass().getResource("create-menu-page.fxml"));
-        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+        if (LoginController.type != null &&("Head".equals(LoginController.type))) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("create-menu-page.fxml"));
+            Parent root = loader.load();
+            Stage stage = new Stage();
+            stage.initStyle(StageStyle.TRANSPARENT);
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.setScene(new Scene(root));
+            stage.showAndWait();
+        } else {
+            try {
+                showAlertWindow("You do not have the right permissions.");
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     public void switchToDeleteMenu(ActionEvent event) throws IOException {
         // Switches to delete menu page.
-        Parent root = FXMLLoader.load(getClass().getResource("delete-menu-page.fxml"));
-        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+        if (LoginController.type != null &&("Head".equals(LoginController.type))) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("delete-menu-page.fxml"));
+            Parent root = loader.load();
+            Stage stage = new Stage();
+            stage.initStyle(StageStyle.TRANSPARENT);
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.setScene(new Scene(root));
+            stage.showAndWait();
+        } else {
+            try {
+                showAlertWindow("You do not have the right permissions.");
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     public void switchToUpdateMenu(ActionEvent event) throws IOException {
         // Switches to update menu page.
-        Parent root = FXMLLoader.load(getClass().getResource("update-recipe-page.fxml"));
-        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+        if (LoginController.type != null &&("Head".equals(LoginController.type))) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("update-menu-page.fxml"));
+            Parent root = loader.load();
+            Stage stage = new Stage();
+            stage.initStyle(StageStyle.TRANSPARENT);
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.setScene(new Scene(root));
+            stage.showAndWait();
+        } else {
+            try {
+                showAlertWindow("You do not have the right permissions.");
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     public void showLoginWindow(ActionEvent event) throws IOException {
@@ -226,6 +316,21 @@ public class BuilderController {
             }
             signinButton.setText("Sign out");
             signinImage.setImage(new Image(getClass().getResourceAsStream("/com/example/javateamproject/StyleElements/Logout.png")));
+        }
+    }
+    public void showAlertWindow (String message) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("alert.fxml"));
+            Parent root = loader.load();
+            AlertController controller = loader.getController();
+            controller.setMessage(message);
+            Stage stage = new Stage();
+            stage.initStyle(StageStyle.TRANSPARENT);
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.setScene(new Scene(root));
+            stage.showAndWait();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
     }
 }

@@ -34,7 +34,7 @@
                   <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
               </rowConstraints>
                <children>
-                  <Button contentDisplay="BOTTOM" mnemonicParsing="false" onAction="#switchToCreateMenu" prefHeight="147.0" prefWidth="176.0" styleClass="gradient-border" stylesheets="@StyleElements/style.css" text="Create Recipe" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                  <Button contentDisplay="BOTTOM" mnemonicParsing="false" onAction="#switchToCreateRecipe" prefHeight="147.0" prefWidth="176.0" styleClass="gradient-border" stylesheets="@StyleElements/style.css" text="Create Recipe" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <graphic>
                         <ImageView fitHeight="94.0" fitWidth="163.0" pickOnBounds="true" preserveRatio="true">
                            <image>

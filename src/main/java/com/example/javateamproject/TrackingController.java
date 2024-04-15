@@ -1,7 +1,7 @@
 package com.example.javateamproject;
 
-import FinalInterTeamServices.BOH.BOHDataAccessor;
-import FinalInterTeamServices.BOH.BOHFinalInterface;
+//import FinalInterTeamServices.BOH.BOHDataAccessor;
+//import FinalInterTeamServices.BOH.BOHFinalInterface;
 import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
@@ -23,7 +23,7 @@ import javafx.scene.image.ImageView;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-import model.Ingredient;
+// import model.Ingredient;
 
 import java.net.URL;
 import java.sql.Connection;
@@ -32,11 +32,11 @@ import java.io.IOException;
 import java.time.LocalDate;
 import java.util.List;
 import java.util.ResourceBundle;
-/* import FinalInterTeamServices.BOH.BOHDataAccessor;
-import FinalInterTeamServices.BOH.BOHFinalInterface;
-import model.Ingredient;
+//import FinalInterTeamServices.BOH.BOHDataAccessor;
+//import FinalInterTeamServices.BOH.BOHFinalInterface;
+// import model.Ingredient;
 import java.util.List;
-*/
+
 public class TrackingController {
     @FXML
     private Button signinButton;
@@ -47,6 +47,7 @@ public class TrackingController {
     @FXML
     private ImageView signinImage;
     @FXML
+    /*
     private TableColumn<WasteEntry, Integer> col_id;
     @FXML
     private TableColumn<WasteEntry, Integer> col_ingredients_id;
@@ -74,10 +75,11 @@ public class TrackingController {
     @FXML
     private TableColumn<Ingredient, Integer> thresholdColumn;
     private final BOHFinalInterface bohDataAccessor = new BOHDataAccessor();
-
+*/
     public void initialize() {
         // Checks if user is already signed in when page is loaded.
         checkSignedIn();
+        /*
         col_id.setCellValueFactory(new PropertyValueFactory<WasteEntry, Integer>("wasteID"));
         col_ingredients_id.setCellValueFactory(new PropertyValueFactory<WasteEntry, Integer>("ingredientID"));
         col_quantity.setCellValueFactory(new PropertyValueFactory<WasteEntry, Double>("quantity"));
@@ -93,10 +95,10 @@ public class TrackingController {
         nameColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getName()));
         quantityColumn.setCellValueFactory(cellData -> new SimpleIntegerProperty(cellData.getValue().getQuantity()).asObject());
         thresholdColumn.setCellValueFactory(cellData -> new SimpleIntegerProperty(cellData.getValue().getThreshold()).asObject());
-
+/*
         // Get stock levels and populate the table view
         List<Ingredient> stockLevels = bohDataAccessor.getStockLevels();
-        stockTableView.getItems().addAll(stockLevels);
+        stockTableView.getItems().addAll(stockLevels); */
 
     }
 
@@ -111,6 +113,7 @@ public class TrackingController {
 
     public void switchToAddWaste(ActionEvent event) throws IOException {
         // Switches to add waste page.
+        if (LoginController.type != null && ("Chef".equals(LoginController.type) || "Sous".equals(LoginController.type) || "Head".equals(LoginController.type))) {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("add-waste-page.fxml"));
             Parent root = loader.load();
             Stage stage = new Stage();
@@ -118,26 +121,49 @@ public class TrackingController {
             stage.initModality(Modality.APPLICATION_MODAL);
             stage.setScene(new Scene(root));
             stage.showAndWait();
+        } else {
+            try {
+                showAlertWindow("You do not have the right permissions.");
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
     }
     public void switchToDeleteWaste(ActionEvent event) throws IOException {
         // Switches to add waste page.
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("delete-waste-page.fxml"));
-        Parent root = loader.load();
-        Stage stage = new Stage();
-        stage.initStyle(StageStyle.TRANSPARENT);
-        stage.initModality(Modality.APPLICATION_MODAL);
-        stage.setScene(new Scene(root));
-        stage.showAndWait();
+        if (LoginController.type != null && ("Sous".equals(LoginController.type) || "Head".equals(LoginController.type))) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("delete-waste-page.fxml"));
+            Parent root = loader.load();
+            Stage stage = new Stage();
+            stage.initStyle(StageStyle.TRANSPARENT);
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.setScene(new Scene(root));
+            stage.showAndWait();
+        } else {
+            try {
+                showAlertWindow("You do not have the right permissions.");
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
     }
     public void switchToEditWaste(ActionEvent event) throws IOException {
         // Switches to add waste page.
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("edit-waste-page.fxml"));
-        Parent root = loader.load();
-        Stage stage = new Stage();
-        stage.initStyle(StageStyle.TRANSPARENT);
-        stage.initModality(Modality.APPLICATION_MODAL);
-        stage.setScene(new Scene(root));
-        stage.showAndWait();
+        if (LoginController.type != null && ("Sous".equals(LoginController.type) || "Head".equals(LoginController.type))) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("edit-waste-page.fxml"));
+            Parent root = loader.load();
+            Stage stage = new Stage();
+            stage.initStyle(StageStyle.TRANSPARENT);
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.setScene(new Scene(root));
+            stage.showAndWait();
+        } else {
+            try {
+                showAlertWindow("You do not have the right permissions.");
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     public void switchToOrder(ActionEvent event) throws IOException {
@@ -245,6 +271,22 @@ public class TrackingController {
             }
             signinButton.setText("Sign out");
             signinImage.setImage(new Image(getClass().getResourceAsStream("/com/example/javateamproject/StyleElements/Logout.png")));
+        }
+    }
+
+    public void showAlertWindow (String message) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("alert.fxml"));
+            Parent root = loader.load();
+            AlertController controller = loader.getController();
+            controller.setMessage(message);
+            Stage stage = new Stage();
+            stage.initStyle(StageStyle.TRANSPARENT);
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.setScene(new Scene(root));
+            stage.showAndWait();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
     }
 }
