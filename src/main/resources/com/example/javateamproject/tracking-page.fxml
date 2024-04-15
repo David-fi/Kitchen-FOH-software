@@ -150,12 +150,12 @@
                                         </Button>
                                     </children>
                                 </HBox>
-                                <TableView fx:id="" prefHeight="271.0" prefWidth="452.0" style="-fx-background-radius: 10px;" styleClass="gradient-border" stylesheets="@StyleElements/style.css">
+                                <TableView fx:id="stockTableView" prefHeight="271.0" prefWidth="452.0" style="-fx-background-radius: 10px;" styleClass="gradient-border" stylesheets="@StyleElements/style.css">
                                     <columns>
-                                        <TableColumn prefWidth="43.44110107421875" text="ID" />
-                                        <TableColumn prefWidth="138.31185913085938" text="Name" />
-                                        <TableColumn prefWidth="59.188232421875" text="Quantity" />
-                                        <TableColumn prefWidth="134.71478271484375" text="Expirery" />
+                                        <TableColumn fx:id="ingredientIdColumn" prefWidth="43.44110107421875" text="ID" />
+                                        <TableColumn fx:id="nameColumn" prefWidth="138.31185913085938" text="Name" />
+                                        <TableColumn fx:id="quantityColumn" prefWidth="59.188232421875" text="Quantity" />
+                                        <TableColumn fx:id="thresholdColumn" prefWidth="134.71478271484375" text="Threshold" />
                                     </columns>
                                 </TableView>
                             </children>

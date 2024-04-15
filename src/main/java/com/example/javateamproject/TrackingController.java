@@ -1,5 +1,8 @@
 package com.example.javateamproject;
 
+import javafx.beans.property.SimpleDoubleProperty;
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
@@ -18,13 +21,17 @@ import javafx.scene.image.ImageView;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.*;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
+import FinalInterTeamServices.BOH.BOHDataAccessor;
+import FinalInterTeamServices.BOH.BOHFinalInterface;
+import model.Ingredient;
+import java.util.List;
+
 
 public class TrackingController implements Initializable{
     @FXML
@@ -35,7 +42,6 @@ public class TrackingController implements Initializable{
     private Label usernameLabel;
     @FXML
     private ImageView signinImage;
-
     @FXML
     private TableColumn<WasteEntry, Integer> col_id;
     @FXML
@@ -46,14 +52,24 @@ public class TrackingController implements Initializable{
     private TableColumn<WasteEntry, String> col_reason;
     @FXML
     private TableColumn<WasteEntry, LocalDate> col_date_logged;
-
     @FXML
     private TableView<WasteEntry> table_users;
-
     @FXML
     private TextField keywordTextField;
-
     ObservableList<WasteEntry> listW;
+    @FXML
+    private TableView<Ingredient> stockTableView;
+    @FXML
+    private TableColumn<Ingredient, Integer> ingredientIdColumn;
+    @FXML
+    private TableColumn<Ingredient, String> nameColumn;
+    @FXML
+    private TableColumn<Ingredient, Double> costColumn;
+    @FXML
+    private TableColumn<Ingredient, Integer> quantityColumn;
+    @FXML
+    private TableColumn<Ingredient, Integer> thresholdColumn;
+    private final BOHFinalInterface bohDataAccessor = new BOHDataAccessor();
 
     public void initialize() {
         // Checks if user is already signed in when page is loaded.
@@ -215,6 +231,15 @@ public class TrackingController implements Initializable{
         table_users.setItems(listW);
         FilteredList<WasteEntry> filteredData = new FilteredList<>(listW, b->true);
 
+// Set up table columns
+        ingredientIdColumn.setCellValueFactory(cellData -> new SimpleIntegerProperty(cellData.getValue().getIngredientID()).asObject());
+        nameColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getName()));
+        quantityColumn.setCellValueFactory(cellData -> new SimpleIntegerProperty(cellData.getValue().getQuantity()).asObject());
+        thresholdColumn.setCellValueFactory(cellData -> new SimpleIntegerProperty(cellData.getValue().getThreshold()).asObject());
+
+        // Get stock levels and populate the table view
+        List<Ingredient> stockLevels = bohDataAccessor.getStockLevels();
+        stockTableView.getItems().addAll(stockLevels);
 
     }
 
