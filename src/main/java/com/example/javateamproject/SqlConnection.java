@@ -28,7 +28,30 @@ public class SqlConnection {
         }
     }
 
-    public static ObservableList<users> getDatausers(){
+    public static ObservableList<usersTwo> getDishData(){
+
+        Connection conn = ConnectDb();
+        ObservableList<usersTwo> list = FXCollections.observableArrayList();
+
+        try{
+            PreparedStatement ps = conn.prepareStatement( "SELECT DishID,Name,RecipeID,PreparationTime\n" +
+                    "FROM Dishes\n");
+            ResultSet rs = ps.executeQuery();
+
+            while(rs.next()){
+                list.add(new usersTwo(rs.getInt("DishID"),rs.getString("Name"),rs.getInt("RecipeID"),rs.getInt("PreparationTime")));
+            }
+
+
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+        return list;
+    }
+
+    public static ObservableList<users> getRecipeData(){
 
         Connection conn = ConnectDb();
         ObservableList<users> list = FXCollections.observableArrayList();

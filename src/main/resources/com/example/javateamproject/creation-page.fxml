@@ -193,7 +193,7 @@
                               </Label>
                               <HBox prefHeight="28.0" prefWidth="179.0" style="-fx-border-color: grey; -fx-border-radius: 5px;">
                                  <children>
-                                    <TextField prefHeight="60.0" prefWidth="333.0" />
+                                    <TextField fx:id="keywordTextFieldTwo" prefHeight="60.0" prefWidth="333.0" />
                                     <Button contentDisplay="GRAPHIC_ONLY" mnemonicParsing="false" prefHeight="0.0" prefWidth="0.0" text="Button">
                                        <graphic>
                                           <ImageView fitHeight="17.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
@@ -209,6 +209,16 @@
                                  <VBox.margin>
                                     <Insets />
                                  </VBox.margin>
+                                 <content>
+                                    <TableView fx:id="table_dish" prefHeight="231.0" prefWidth="362.0">
+                                      <columns>
+                                        <TableColumn fx:id="col_DishId" prefWidth="75.0" text="DishID" />
+                                        <TableColumn fx:id="col_FoodNameTwo" prefWidth="75.0" text="FoodName" />
+                                          <TableColumn fx:id="col_RecipeIdTwo" prefWidth="75.0" text="RecipeID" />
+                                          <TableColumn fx:id="col_PreparationTimeTwo" prefWidth="125.60000610351562" text="PreparationTime" />
+                                      </columns>
+                                    </TableView>
+                                 </content>
                               </ScrollPane>
                            </children>
                         </VBox>

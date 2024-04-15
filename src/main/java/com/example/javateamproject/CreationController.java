@@ -55,26 +55,37 @@ public class CreationController {
     private TableView<users>table_recipe;
 
 
+    @FXML
+    private TableColumn<usersTwo,Integer> col_DishId;
 
-//    @FXML
-//    private TableColumn<users, Integer> col_RecipeId;
-//
-//    @FXML
-//    private TableColumn<users, String> col_name;
-//
-//    @FXML
-//    private TableColumn<users, LocalDate> col_weekstartdate;
-//
-//    @FXML
-//    private TableView<users> table_users;
+    @FXML
+    private TableColumn<usersTwo,String> col_FoodNameTwo;
 
-//    @FXML
-//    private TableColumn<>
+    @FXML
+    private TableColumn<usersTwo,Integer> col_RecipeIdTwo;
+
+    @FXML
+    private TableColumn<usersTwo,Integer> col_PreparationTimeTwo;
+
+    @FXML
+
+    private TableView<usersTwo> table_dish;
+
+
+    @FXML
+
+    private TextField keywordTextFieldTwo;
+
 
     @FXML
     private TextField keywordTextField;
 
     ObservableList<users> listM;
+
+    ObservableList<usersTwo> listD;
+
+
+
 
 
 
@@ -103,7 +114,7 @@ public class CreationController {
 
 
 
-        listM = SqlConnection.getDatausers();
+        listM = SqlConnection.getRecipeData();
         table_recipe.setItems(listM);
 
         FilteredList<users> filteredData = new FilteredList<>(listM, b->true);
@@ -136,6 +147,54 @@ public class CreationController {
         sortedData.comparatorProperty().bind(table_recipe.comparatorProperty());
 
         table_recipe.setItems(sortedData);
+
+        col_DishId.setCellValueFactory(new PropertyValueFactory<usersTwo,Integer>("id"));
+        col_FoodNameTwo.setCellValueFactory(new PropertyValueFactory<usersTwo,String>("foodName"));
+        col_RecipeIdTwo.setCellValueFactory(new PropertyValueFactory<usersTwo,Integer>("idTwo"));
+        col_PreparationTimeTwo.setCellValueFactory(new PropertyValueFactory<usersTwo,Integer>("prepTime"));
+
+        listD = SqlConnection.getDishData();
+        table_dish.setItems(listD);
+
+
+
+
+
+
+        FilteredList<usersTwo> filteredDataTwo = new FilteredList<>(listD, d->true);
+
+        keywordTextFieldTwo.textProperty().addListener((observable,oldValueTwo,newValueTwo) -> {
+            filteredDataTwo.setPredicate(usersTwo -> {
+                if(newValueTwo.isEmpty() || newValueTwo.isBlank() || newValueTwo == null){
+                    return true;
+                }
+                String specificKeywordTwo = newValueTwo.toLowerCase();
+
+                if(String.valueOf(usersTwo.getIdTwo()).toLowerCase().indexOf(specificKeywordTwo) > -1){
+                    return true;
+                } else if (String.valueOf(usersTwo.getId()).toLowerCase().indexOf(specificKeywordTwo) > -1) {
+                    return true;
+                } else if(usersTwo.getFoodName().toLowerCase().indexOf(specificKeywordTwo) > -1){
+                    return true;
+                } else if(String.valueOf(usersTwo.getPrepTime()).toLowerCase().indexOf(specificKeywordTwo) > -1){
+                    return true;
+                }
+                else
+                    return false;
+            });
+        });
+//
+//
+//        SortedList<usersTwo> sortedDataTwo = new SortedList<>(filteredDataTwo);
+//
+//        //update table with sorted result and bind it
+//        sortedDataTwo.comparatorProperty().bind(table_dish.comparatorProperty());
+
+
+
+
+
+
     }
 
     public void switchToHome(ActionEvent event) throws IOException {
