@@ -27,11 +27,11 @@ import java.sql.*;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
-/* import FinalInterTeamServices.BOH.BOHDataAccessor;
+import FinalInterTeamServices.BOH.BOHDataAccessor;
 import FinalInterTeamServices.BOH.BOHFinalInterface;
 import model.Ingredient;
 import java.util.List;
-*/
+
 public class TrackingController {
     @FXML
     private Button signinButton;
@@ -91,7 +91,7 @@ public class TrackingController {
 
         // Get stock levels and populate the table view
         List<Ingredient> stockLevels = bohDataAccessor.getStockLevels();
-        stockTableView.getItems().addAll(stockLevels);
+        stockTableView.getItems().addAll(stockLevels); */
 
     }
 
@@ -106,6 +106,7 @@ public class TrackingController {
 
     public void switchToAddWaste(ActionEvent event) throws IOException {
         // Switches to add waste page.
+        if (LoginController.type != null && ("Chef".equals(LoginController.type) || "Sous".equals(LoginController.type) || "Head".equals(LoginController.type))) {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("add-waste-page.fxml"));
             Parent root = loader.load();
             Stage stage = new Stage();
@@ -113,26 +114,49 @@ public class TrackingController {
             stage.initModality(Modality.APPLICATION_MODAL);
             stage.setScene(new Scene(root));
             stage.showAndWait();
+        } else {
+            try {
+                showAlertWindow("You do not have the right permissions.");
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
     }
     public void switchToDeleteWaste(ActionEvent event) throws IOException {
         // Switches to add waste page.
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("delete-waste-page.fxml"));
-        Parent root = loader.load();
-        Stage stage = new Stage();
-        stage.initStyle(StageStyle.TRANSPARENT);
-        stage.initModality(Modality.APPLICATION_MODAL);
-        stage.setScene(new Scene(root));
-        stage.showAndWait();
+        if (LoginController.type != null && ("Sous".equals(LoginController.type) || "Head".equals(LoginController.type))) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("delete-waste-page.fxml"));
+            Parent root = loader.load();
+            Stage stage = new Stage();
+            stage.initStyle(StageStyle.TRANSPARENT);
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.setScene(new Scene(root));
+            stage.showAndWait();
+        } else {
+            try {
+                showAlertWindow("You do not have the right permissions.");
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
     }
     public void switchToEditWaste(ActionEvent event) throws IOException {
         // Switches to add waste page.
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("edit-waste-page.fxml"));
-        Parent root = loader.load();
-        Stage stage = new Stage();
-        stage.initStyle(StageStyle.TRANSPARENT);
-        stage.initModality(Modality.APPLICATION_MODAL);
-        stage.setScene(new Scene(root));
-        stage.showAndWait();
+        if (LoginController.type != null && ("Sous".equals(LoginController.type) || "Head".equals(LoginController.type))) {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("edit-waste-page.fxml"));
+            Parent root = loader.load();
+            Stage stage = new Stage();
+            stage.initStyle(StageStyle.TRANSPARENT);
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.setScene(new Scene(root));
+            stage.showAndWait();
+        } else {
+            try {
+                showAlertWindow("You do not have the right permissions.");
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        }
     }
 
     public void switchToOrder(ActionEvent event) throws IOException {
@@ -240,6 +264,22 @@ public class TrackingController {
             }
             signinButton.setText("Sign out");
             signinImage.setImage(new Image(getClass().getResourceAsStream("/com/example/javateamproject/StyleElements/Logout.png")));
+        }
+    }
+
+    public void showAlertWindow (String message) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("alert.fxml"));
+            Parent root = loader.load();
+            AlertController controller = loader.getController();
+            controller.setMessage(message);
+            Stage stage = new Stage();
+            stage.initStyle(StageStyle.TRANSPARENT);
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.setScene(new Scene(root));
+            stage.showAndWait();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
     }
 }
