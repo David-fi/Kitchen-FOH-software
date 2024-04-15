@@ -27,13 +27,12 @@ import java.sql.*;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
-import FinalInterTeamServices.BOH.BOHDataAccessor;
+/* import FinalInterTeamServices.BOH.BOHDataAccessor;
 import FinalInterTeamServices.BOH.BOHFinalInterface;
 import model.Ingredient;
 import java.util.List;
-
-
-public class TrackingController{
+*/
+public class TrackingController {
     @FXML
     private Button signinButton;
     @FXML
@@ -107,27 +106,33 @@ public class TrackingController{
 
     public void switchToAddWaste(ActionEvent event) throws IOException {
         // Switches to add waste page.
-        Parent root = FXMLLoader.load(getClass().getResource("add-waste-page.fxml"));
-        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("add-waste-page.fxml"));
+            Parent root = loader.load();
+            Stage stage = new Stage();
+            stage.initStyle(StageStyle.TRANSPARENT);
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.setScene(new Scene(root));
+            stage.showAndWait();
     }
     public void switchToDeleteWaste(ActionEvent event) throws IOException {
         // Switches to add waste page.
-        Parent root = FXMLLoader.load(getClass().getResource("delete-waste-page.fxml"));
-        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("delete-waste-page.fxml"));
+        Parent root = loader.load();
+        Stage stage = new Stage();
+        stage.initStyle(StageStyle.TRANSPARENT);
+        stage.initModality(Modality.APPLICATION_MODAL);
+        stage.setScene(new Scene(root));
+        stage.showAndWait();
     }
     public void switchToEditWaste(ActionEvent event) throws IOException {
         // Switches to add waste page.
-        Parent root = FXMLLoader.load(getClass().getResource("edit-waste-page.fxml"));
-        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("edit-waste-page.fxml"));
+        Parent root = loader.load();
+        Stage stage = new Stage();
+        stage.initStyle(StageStyle.TRANSPARENT);
+        stage.initModality(Modality.APPLICATION_MODAL);
+        stage.setScene(new Scene(root));
+        stage.showAndWait();
     }
 
     public void switchToOrder(ActionEvent event) throws IOException {
@@ -237,10 +242,6 @@ public class TrackingController{
             signinImage.setImage(new Image(getClass().getResourceAsStream("/com/example/javateamproject/StyleElements/Logout.png")));
         }
     }
-
-
-
-
 }
 
 
