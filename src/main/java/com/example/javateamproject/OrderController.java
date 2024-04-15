@@ -240,7 +240,7 @@ public class OrderController {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("table-order.fxml"));
             Parent root = loader.load();
             TableOrderController controller = loader.getController();
-            controller.setTableNumber("Table 1");
+            controller.setTableNumber("1");
             controller.getOrders();
             Stage stage = new Stage();
             stage.initStyle(StageStyle.TRANSPARENT);
@@ -256,7 +256,7 @@ public class OrderController {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("table-order.fxml"));
             Parent root = loader.load();
             TableOrderController controller = loader.getController();
-            controller.setTableNumber("Table 2");
+            controller.setTableNumber("2");
             controller.getOrders();
             Stage stage = new Stage();
             stage.initStyle(StageStyle.TRANSPARENT);
@@ -320,7 +320,7 @@ public class OrderController {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("table-order.fxml"));
             Parent root = loader.load();
             TableOrderController controller = loader.getController();
-            controller.setTableNumber("1");
+            controller.setTableNumber("6");
             controller.getOrders();
             Stage stage = new Stage();
             stage.initStyle(StageStyle.TRANSPARENT);
@@ -336,7 +336,7 @@ public class OrderController {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("table-order.fxml"));
             Parent root = loader.load();
             TableOrderController controller = loader.getController();
-            controller.setTableNumber("");
+            controller.setTableNumber("7");
             controller.getOrders();
             Stage stage = new Stage();
             stage.initStyle(StageStyle.TRANSPARENT);
@@ -352,7 +352,7 @@ public class OrderController {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("table-order.fxml"));
             Parent root = loader.load();
             TableOrderController controller = loader.getController();
-            controller.setTableNumber("Table 9");
+            controller.setTableNumber("8");
             controller.getOrders();
             Stage stage = new Stage();
             stage.initStyle(StageStyle.TRANSPARENT);
@@ -368,7 +368,104 @@ public class OrderController {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("table-order.fxml"));
             Parent root = loader.load();
             TableOrderController controller = loader.getController();
-            controller.setTableNumber("Table 9");
+            controller.setTableNumber("9");
+            controller.getOrders();
+            Stage stage = new Stage();
+            stage.initStyle(StageStyle.TRANSPARENT);
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.setScene(new Scene(root));
+            stage.showAndWait();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    public void showTable10Window() {
+        try{
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("table-order.fxml"));
+            Parent root = loader.load();
+            TableOrderController controller = loader.getController();
+            controller.setTableNumber("10");
+            controller.getOrders();
+            Stage stage = new Stage();
+            stage.initStyle(StageStyle.TRANSPARENT);
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.setScene(new Scene(root));
+            stage.showAndWait();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    public void showTable11Window() {
+        try{
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("table-order.fxml"));
+            Parent root = loader.load();
+            TableOrderController controller = loader.getController();
+            controller.setTableNumber("11");
+            controller.getOrders();
+            Stage stage = new Stage();
+            stage.initStyle(StageStyle.TRANSPARENT);
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.setScene(new Scene(root));
+            stage.showAndWait();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public void showTable12Window() {
+        try{
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("table-order.fxml"));
+            Parent root = loader.load();
+            TableOrderController controller = loader.getController();
+            controller.setTableNumber("12");
+            controller.getOrders();
+            Stage stage = new Stage();
+            stage.initStyle(StageStyle.TRANSPARENT);
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.setScene(new Scene(root));
+            stage.showAndWait();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    public void showTable13Window() {
+        try{
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("table-order.fxml"));
+            Parent root = loader.load();
+            TableOrderController controller = loader.getController();
+            controller.setTableNumber("13");
+            controller.getOrders();
+            Stage stage = new Stage();
+            stage.initStyle(StageStyle.TRANSPARENT);
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.setScene(new Scene(root));
+            stage.showAndWait();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    public void showTable14Window() {
+        try{
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("table-order.fxml"));
+            Parent root = loader.load();
+            TableOrderController controller = loader.getController();
+            controller.setTableNumber("14");
+            controller.getOrders();
+            Stage stage = new Stage();
+            stage.initStyle(StageStyle.TRANSPARENT);
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.setScene(new Scene(root));
+            stage.showAndWait();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    public void showTable15Window() {
+        try{
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("table-order.fxml"));
+            Parent root = loader.load();
+            TableOrderController controller = loader.getController();
+            controller.setTableNumber("15");
             controller.getOrders();
             Stage stage = new Stage();
             stage.initStyle(StageStyle.TRANSPARENT);
