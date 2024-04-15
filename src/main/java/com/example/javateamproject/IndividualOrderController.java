@@ -30,7 +30,7 @@ public class IndividualOrderController {
         PreparedStatement preparedStatement = null;
         try {
             connection = DriverManager.getConnection(url, user, password);
-            String query = "UPDATE orders SET status = 'Completed' WHERE OrderID = ?";
+            String query = "UPDATE Orders SET Status = 'Completed' WHERE OrderID = ?";
             preparedStatement = connection.prepareStatement(query);
             preparedStatement.setString(1, orderIDLabel.getText());
             preparedStatement.executeUpdate();
@@ -55,16 +55,16 @@ public class IndividualOrderController {
         dishLabel.setText(dish);
     }
     public void setQuantity(String quantity) {
-        dishLabel.setText(quantity);
+        quantityLabel.setText("Quantity:" + quantity);
     }
     public void setOrderID(String orderID) {
-        dishLabel.setText(orderID);
+        orderIDLabel.setText(orderID);
     }
     public void setRequest(String specialRequest) {
-        dishLabel.setText(specialRequest);
+        specialRequestArea.setText(specialRequest);
     }
     public void setDietary(String dietary) {
-        dishLabel.setText(dietary);
+        dietaryArea.setText(dietary);
     }
 }
 
