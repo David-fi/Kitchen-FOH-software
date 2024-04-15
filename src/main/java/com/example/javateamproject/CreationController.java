@@ -36,23 +36,58 @@ public class CreationController {
     private ImageView signinImage;
 
     @FXML
-    private TableColumn<users, Integer> col_id;
+    private TableColumn<users,Integer> col_RecipeId;
 
     @FXML
-    private TableColumn<users, String> col_name;
+    private TableColumn<users,String> col_FoodName;
 
     @FXML
-    private TableColumn<users, LocalDate> col_weekstartdate;
+    private TableColumn<users,String> col_desc;
 
     @FXML
-    private TableView<users> table_users;
+    private TableColumn<users,String> col_name;
+
+    @FXML
+    private TableColumn<users,String> col_status;
+
+    @FXML
+
+    private TableView<users>table_recipe;
+
+
+    @FXML
+    private TableColumn<usersTwo,Integer> col_DishId;
+
+    @FXML
+    private TableColumn<usersTwo,String> col_FoodNameTwo;
+
+    @FXML
+    private TableColumn<usersTwo,Integer> col_RecipeIdTwo;
+
+    @FXML
+    private TableColumn<usersTwo,Integer> col_PreparationTimeTwo;
+
+    @FXML
+
+    private TableView<usersTwo> table_dish;
+
+
+    @FXML
+
+    private TextField keywordTextFieldTwo;
+
 
     @FXML
     private TextField keywordTextField;
 
     ObservableList<users> listM;
 
-//    int index = -1;
+    ObservableList<usersTwo> listD;
+
+
+
+
+
 
     Connection conn = null;
 
@@ -66,13 +101,21 @@ public class CreationController {
     public void initialize() {
         // Checks if user is already signed in when page is loaded.
         checkSignedIn();
-        col_id.setCellValueFactory(new PropertyValueFactory<users,Integer>("id"));
-        col_weekstartdate.setCellValueFactory(new PropertyValueFactory<users,LocalDate>("WeekStartDate"));
+        col_RecipeId.setCellValueFactory(new PropertyValueFactory<users,Integer>("id"));
+
+        col_FoodName.setCellValueFactory(new PropertyValueFactory<users,String>("FoodName"));
+
+        col_desc.setCellValueFactory(new PropertyValueFactory<users,String>("description"));
 
         col_name.setCellValueFactory(new PropertyValueFactory<users,String>("Name"));
 
-        listM = SqlConnection.getDatausers();
-        table_users.setItems(listM);
+        col_status.setCellValueFactory(new PropertyValueFactory<users,String>("Status"));
+
+
+
+
+        listM = SqlConnection.getRecipeData();
+        table_recipe.setItems(listM);
 
         FilteredList<users> filteredData = new FilteredList<>(listM, b->true);
 
@@ -85,11 +128,15 @@ public class CreationController {
 
                 if(users.getName().toLowerCase().indexOf(specificKeyword) > -1){
                     return true;
-                } else if (String.valueOf(users.getId()).toLowerCase().indexOf(specificKeyword) > -1){
+                } else if (String.valueOf(users.getId()).toLowerCase().indexOf(specificKeyword) > -1) {
                     return true;
-                } else if(users.getWeekStartDate().toString().indexOf(specificKeyword) > -1){
+                } else if(users.getFoodName().toLowerCase().indexOf(specificKeyword) > -1){
                     return true;
-                } else
+                } else if(users.getDescription().toLowerCase().indexOf(specificKeyword) > -1){
+                    return true;
+                }
+
+                else
                     return false;
             });
         });
@@ -97,9 +144,57 @@ public class CreationController {
         SortedList<users> sortedData = new SortedList<>(filteredData);
 
         //update table with sorted result and bind it
-        sortedData.comparatorProperty().bind(table_users.comparatorProperty());
+        sortedData.comparatorProperty().bind(table_recipe.comparatorProperty());
 
-        table_users.setItems(sortedData);
+        table_recipe.setItems(sortedData);
+
+        col_DishId.setCellValueFactory(new PropertyValueFactory<usersTwo,Integer>("id"));
+        col_FoodNameTwo.setCellValueFactory(new PropertyValueFactory<usersTwo,String>("foodName"));
+        col_RecipeIdTwo.setCellValueFactory(new PropertyValueFactory<usersTwo,Integer>("idTwo"));
+        col_PreparationTimeTwo.setCellValueFactory(new PropertyValueFactory<usersTwo,Integer>("prepTime"));
+
+        listD = SqlConnection.getDishData();
+        table_dish.setItems(listD);
+
+
+
+
+
+
+        FilteredList<usersTwo> filteredDataTwo = new FilteredList<>(listD, d->true);
+
+        keywordTextFieldTwo.textProperty().addListener((observable,oldValueTwo,newValueTwo) -> {
+            filteredDataTwo.setPredicate(usersTwo -> {
+                if(newValueTwo.isEmpty() || newValueTwo.isBlank() || newValueTwo == null){
+                    return true;
+                }
+                String specificKeywordTwo = newValueTwo.toLowerCase();
+
+                if(String.valueOf(usersTwo.getIdTwo()).toLowerCase().indexOf(specificKeywordTwo) > -1){
+                    return true;
+                } else if (String.valueOf(usersTwo.getId()).toLowerCase().indexOf(specificKeywordTwo) > -1) {
+                    return true;
+                } else if(usersTwo.getFoodName().toLowerCase().indexOf(specificKeywordTwo) > -1){
+                    return true;
+                } else if(String.valueOf(usersTwo.getPrepTime()).toLowerCase().indexOf(specificKeywordTwo) > -1){
+                    return true;
+                }
+                else
+                    return false;
+            });
+        });
+//
+//
+//        SortedList<usersTwo> sortedDataTwo = new SortedList<>(filteredDataTwo);
+//
+//        //update table with sorted result and bind it
+//        sortedDataTwo.comparatorProperty().bind(table_dish.comparatorProperty());
+
+
+
+
+
+
     }
 
     public void switchToHome(ActionEvent event) throws IOException {
