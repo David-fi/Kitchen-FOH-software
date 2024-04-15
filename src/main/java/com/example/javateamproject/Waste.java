@@ -36,24 +36,6 @@ public class Waste {
     }
 
 
-    //@FXML
-    //public void handleSave() {
-    //    try {
-    //        int wasteID = Integer.parseInt(createWasteID.getText()); // Assuming createWasteID is a TextField
-    //        int ingredientID = Integer.parseInt(createIngredientID.getText()); // Assuming createIngredientID is a TextField
-    //        int quantity = Integer.parseInt(createQuantity.getText()); // Assuming createQuantity is a TextField
-    //        String reason = createReason.getText(); // Assuming createReason is a TextField
-    //        String dateLogged = createDateLogged.getText(); // Assuming createDateLogged is a TextField
-    //        int wasteTypeID = Integer.parseInt(createWasteTypeID.getText()); // Assuming createWasteTypeID is a TextField
-
-            // Call the method to add waste data to database
-    //        addWasteToDatabase(wasteID, ingredientID, quantity, reason, dateLogged, wasteTypeID);
-    //    } catch (NumberFormatException e) {
-    //        // Handle parsing errors
-    //        System.err.println("Error parsing input: " + e.getMessage());
-    //    }
-    //}
-
 
 
 

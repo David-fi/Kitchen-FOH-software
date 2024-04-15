@@ -1,5 +1,7 @@
 package com.example.javateamproject;
 
+import FinalInterTeamServices.BOH.BOHDataAccessor;
+import FinalInterTeamServices.BOH.BOHFinalInterface;
 import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
@@ -21,11 +23,14 @@ import javafx.scene.image.ImageView;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import model.Ingredient;
+
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.*;
 import java.io.IOException;
 import java.time.LocalDate;
+import java.util.List;
 import java.util.ResourceBundle;
 /* import FinalInterTeamServices.BOH.BOHDataAccessor;
 import FinalInterTeamServices.BOH.BOHFinalInterface;
