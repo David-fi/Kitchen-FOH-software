@@ -75,17 +75,6 @@ public class Dishes {
         }
     }
 
-    public boolean editDishes(int DishID, String newDishesName) {
-        String sql = "UPDATE Dish SET Name = ? WHERE DishID = ?";
-        try (PreparedStatement statement = connection.prepareStatement(sql)) {
-            statement.setString(1, newDishesName);
-            statement.setInt(2, DishID);
-            int rowsUpdated = statement.executeUpdate();
-            return rowsUpdated > 0;
-        } catch (SQLException ex) {
-            ex.printStackTrace();
-            return false;
-        }
-    }
+
 
 }

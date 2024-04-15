@@ -15,13 +15,13 @@
         <AnchorPane layoutX="200.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
                 <Label alignment="CENTER" text="Designed and developed by TechformIT © 2024" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
-            <TextArea layoutX="270.0" layoutY="306.0" prefHeight="40.0" prefWidth="300.0" promptText="Enter the MenuID that you wish to delete" />
+            <TextArea fx:id="DeleteMenuEnterMenuID" layoutX="270.0" layoutY="306.0" prefHeight="40.0" prefWidth="300.0" promptText="Enter the MenuID that you wish to delete" />
             <Text layoutX="307.0" layoutY="185.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Delete Menu" textAlignment="CENTER" wrappingWidth="200.00000000000006" AnchorPane.leftAnchor="300.0" AnchorPane.rightAnchor="300.0">
                <font>
                   <Font size="30.0" />
                </font>
             </Text>
-            <Button layoutX="593.0" layoutY="389.0" mnemonicParsing="false" text="Submit" AnchorPane.leftAnchor="350.0" AnchorPane.rightAnchor="350.0" />
+            <Button layoutX="593.0" layoutY="389.0" mnemonicParsing="false" onAction="#HandleDeleteMenu" text="Submit" AnchorPane.leftAnchor="350.0" AnchorPane.rightAnchor="350.0" />
             </children>
         </AnchorPane>
       <HBox alignment="CENTER_RIGHT" layoutX="-122.0" layoutY="19.0" prefHeight="18.0" prefWidth="633.0" spacing="10.0" styleClass="background-colour" stylesheets="@StyleElements/style.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">

@@ -20,8 +20,8 @@
                   <Font size="30.0" />
                </font>
             </Text>
-            <TextArea layoutX="270.0" layoutY="306.0" prefHeight="40.0" prefWidth="300.0" promptText="Enter the RecipeID that you wish to delete" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="200.0" />
-            <Button layoutX="373.0" layoutY="393.0" mnemonicParsing="false" text="Submit" />
+            <TextArea fx:id="DeleteRecipeEnterRecipeID" layoutX="270.0" layoutY="306.0" prefHeight="40.0" prefWidth="300.0" promptText="Enter the RecipeID that you wish to delete" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="200.0" />
+            <Button layoutX="373.0" layoutY="393.0" mnemonicParsing="false" onAction="#HandleDeleteRecipe" text="Submit" />
             </children>
         </AnchorPane>
       <HBox alignment="CENTER_RIGHT" layoutX="-132.0" layoutY="9.0" prefHeight="18.0" prefWidth="633.0" spacing="10.0" styleClass="background-colour" stylesheets="@StyleElements/style.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
