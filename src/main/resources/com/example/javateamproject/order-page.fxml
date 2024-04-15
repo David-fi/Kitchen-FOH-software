@@ -231,7 +231,7 @@
                               <Font size="9.0" />
                            </font>
                         </Button>
-                        <Button fx:id="table6Button" contentDisplay="BOTTOM" mnemonicParsing="false" prefHeight="65.0" prefWidth="166.0" style="-fx-background-radius: 25;" text="Table 6" GridPane.rowIndex="8">
+                        <Button fx:id="table6Button" contentDisplay="BOTTOM" mnemonicParsing="false" onAction="#showTable6Window" prefHeight="65.0" prefWidth="166.0" style="-fx-background-radius: 25;" text="Table 6" GridPane.rowIndex="8">
                            <graphic>
                               <ImageView fitHeight="44.0" fitWidth="119.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -243,7 +243,7 @@
                               <Font size="9.0" />
                            </font>
                         </Button>
-                        <Button fx:id="table7Button" contentDisplay="BOTTOM" mnemonicParsing="false" prefHeight="65.0" prefWidth="166.0" style="-fx-background-radius: 25;" text="Table 7" GridPane.columnIndex="2">
+                        <Button fx:id="table7Button" contentDisplay="BOTTOM" mnemonicParsing="false" onAction="#showTable7Window" prefHeight="65.0" prefWidth="166.0" style="-fx-background-radius: 25;" text="Table 7" GridPane.columnIndex="2">
                            <graphic>
                               <ImageView fitHeight="44.0" fitWidth="119.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -255,7 +255,7 @@
                               <Font size="9.0" />
                            </font>
                         </Button>
-                        <Button fx:id="table8Button" contentDisplay="BOTTOM" mnemonicParsing="false" prefHeight="65.0" prefWidth="166.0" style="-fx-background-radius: 25;" text="Table 8" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                        <Button fx:id="table8Button" contentDisplay="BOTTOM" mnemonicParsing="false" onAction="#showTable8Window" prefHeight="65.0" prefWidth="166.0" style="-fx-background-radius: 25;" text="Table 8" GridPane.columnIndex="2" GridPane.rowIndex="2">
                            <graphic>
                               <ImageView fitHeight="44.0" fitWidth="119.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -267,7 +267,7 @@
                               <Font size="9.0" />
                            </font>
                         </Button>
-                        <Button fx:id="table9Button" contentDisplay="BOTTOM" mnemonicParsing="false" prefHeight="65.0" prefWidth="166.0" style="-fx-background-radius: 25;" text="Table 9" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                        <Button fx:id="table9Button" contentDisplay="BOTTOM" mnemonicParsing="false" onAction="#showTable9Window" prefHeight="65.0" prefWidth="166.0" style="-fx-background-radius: 25;" text="Table 9" GridPane.columnIndex="2" GridPane.rowIndex="4">
                            <graphic>
                               <ImageView fitHeight="44.0" fitWidth="119.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -279,7 +279,7 @@
                               <Font size="9.0" />
                            </font>
                         </Button>
-                        <Button fx:id="table10Button" contentDisplay="BOTTOM" mnemonicParsing="false" prefHeight="65.0" prefWidth="166.0" style="-fx-background-radius: 25;" text="Table 10" GridPane.columnIndex="2" GridPane.rowIndex="6">
+                        <Button fx:id="table10Button" contentDisplay="BOTTOM" mnemonicParsing="false" onAction="#showTable10Window" prefHeight="65.0" prefWidth="166.0" style="-fx-background-radius: 25;" text="Table 10" GridPane.columnIndex="2" GridPane.rowIndex="6">
                            <graphic>
                               <ImageView fitHeight="44.0" fitWidth="119.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -291,7 +291,7 @@
                               <Font size="9.0" />
                            </font>
                         </Button>
-                        <Button fx:id="table11Button" contentDisplay="BOTTOM" mnemonicParsing="false" prefHeight="65.0" prefWidth="166.0" style="-fx-background-radius: 25;" text="Table 11" GridPane.columnIndex="2" GridPane.rowIndex="7">
+                        <Button fx:id="table11Button" contentDisplay="BOTTOM" mnemonicParsing="false" onAction="#showTable11Window" prefHeight="65.0" prefWidth="166.0" style="-fx-background-radius: 25;" text="Table 11" GridPane.columnIndex="2" GridPane.rowIndex="7">
                            <graphic>
                               <ImageView fitHeight="44.0" fitWidth="119.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -303,7 +303,7 @@
                               <Font size="9.0" />
                            </font>
                         </Button>
-                        <Button fx:id="table12Button" contentDisplay="BOTTOM" mnemonicParsing="false" prefHeight="65.0" prefWidth="166.0" style="-fx-background-radius: 25;" text="Table 12" GridPane.columnIndex="2" GridPane.rowIndex="8">
+                        <Button fx:id="table12Button" contentDisplay="BOTTOM" mnemonicParsing="false" onAction="#showTable12Window" prefHeight="65.0" prefWidth="166.0" style="-fx-background-radius: 25;" text="Table 12" GridPane.columnIndex="2" GridPane.rowIndex="8">
                            <graphic>
                               <ImageView fitHeight="44.0" fitWidth="119.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -315,7 +315,7 @@
                               <Font size="9.0" />
                            </font>
                         </Button>
-                        <Button fx:id="table13Button" contentDisplay="BOTTOM" mnemonicParsing="false" prefHeight="65.0" prefWidth="166.0" style="-fx-background-radius: 25;" text="Table 13" GridPane.columnIndex="4">
+                        <Button fx:id="table13Button" contentDisplay="BOTTOM" mnemonicParsing="false" onAction="#showTable13Window" prefHeight="65.0" prefWidth="166.0" style="-fx-background-radius: 25;" text="Table 13" GridPane.columnIndex="4">
                            <graphic>
                               <ImageView fitHeight="44.0" fitWidth="119.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -327,7 +327,7 @@
                               <Font size="9.0" />
                            </font>
                         </Button>
-                        <Button fx:id="table14Button" contentDisplay="BOTTOM" mnemonicParsing="false" prefHeight="65.0" prefWidth="166.0" style="-fx-background-radius: 25;" text="Table 14" GridPane.columnIndex="4" GridPane.rowIndex="2">
+                        <Button fx:id="table14Button" contentDisplay="BOTTOM" mnemonicParsing="false" onAction="#showTable14Window" prefHeight="65.0" prefWidth="166.0" style="-fx-background-radius: 25;" text="Table 14" GridPane.columnIndex="4" GridPane.rowIndex="2">
                            <graphic>
                               <ImageView fitHeight="44.0" fitWidth="119.0" pickOnBounds="true" preserveRatio="true">
                                  <image>
@@ -339,7 +339,7 @@
                               <Font size="9.0" />
                            </font>
                         </Button>
-                        <Button fx:id="table15Button" contentDisplay="BOTTOM" mnemonicParsing="false" prefHeight="65.0" prefWidth="166.0" style="-fx-background-radius: 25;" text="Table 15" GridPane.columnIndex="4" GridPane.rowIndex="3">
+                        <Button fx:id="table15Button" contentDisplay="BOTTOM" mnemonicParsing="false" onAction="#showTable15Window" prefHeight="65.0" prefWidth="166.0" style="-fx-background-radius: 25;" text="Table 15" GridPane.columnIndex="4" GridPane.rowIndex="3">
                            <graphic>
                               <ImageView fitHeight="44.0" fitWidth="119.0" pickOnBounds="true" preserveRatio="true">
                                  <image>

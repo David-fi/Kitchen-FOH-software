@@ -15,8 +15,8 @@
         <AnchorPane layoutX="200.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
                 <Label alignment="CENTER" text="Designed and developed by TechformIT © 2024" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
-                <TextArea layoutX="229.0" layoutY="301.0" prefHeight="40.0" prefWidth="300.0" promptText="Enter the WasteID" />
-                <Button layoutX="354.0" layoutY="364.0" mnemonicParsing="false" text="Submit" />
+                <TextArea fx:id="theWasteID" layoutX="229.0" layoutY="301.0" prefHeight="40.0" prefWidth="300.0" promptText="Enter the WasteID" />
+                <Button layoutX="354.0" layoutY="364.0" mnemonicParsing="false" onAction="#deleteWaste" text="Submit" />
                 <Text layoutX="243.0" layoutY="215.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Delete Waste" textAlignment="CENTER" wrappingWidth="263.50000000000006">
                     <font>
                         <Font size="30.0" />

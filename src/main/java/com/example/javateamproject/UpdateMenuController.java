@@ -31,14 +31,4 @@ public class UpdateMenuController {
         stage.setScene(scene);
         stage.show();
     }
-    public void switchToReview(ActionEvent event) throws IOException {
-        // Switches to review page.
-        Parent root = FXMLLoader.load(getClass().getResource("review-page.fxml"));
-        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
-    }
-
-
 }

@@ -6,7 +6,7 @@ import model.Ingredient;
 
 import java.util.List;
 
-public class BOHLibraryUsage {
+ public class BOHLibraryUsage {
     public static void main(String[] args) {
         // Create an instance of the BOHDataAccessor
         BOHFinalInterface bohDataAccessor = new BOHDataAccessor();
