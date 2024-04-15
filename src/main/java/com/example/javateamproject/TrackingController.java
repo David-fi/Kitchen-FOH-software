@@ -1,7 +1,7 @@
 package com.example.javateamproject;
 
-//import FinalInterTeamServices.BOH.BOHDataAccessor;
-//import FinalInterTeamServices.BOH.BOHFinalInterface;
+import FinalInterTeamServices.BOH.BOHDataAccessor;
+import FinalInterTeamServices.BOH.BOHFinalInterface;
 import javafx.beans.property.SimpleDoubleProperty;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
@@ -23,8 +23,7 @@ import javafx.scene.image.ImageView;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
-// import model.Ingredient;
-
+import model.Ingredient;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.*;
@@ -79,7 +78,6 @@ public class TrackingController {
     public void initialize() {
         // Checks if user is already signed in when page is loaded.
         checkSignedIn();
-
         col_id.setCellValueFactory(new PropertyValueFactory<WasteEntry, Integer>("wasteID"));
         col_ingredients_id.setCellValueFactory(new PropertyValueFactory<WasteEntry, Integer>("ingredientID"));
         col_quantity.setCellValueFactory(new PropertyValueFactory<WasteEntry, Double>("quantity"));
@@ -99,7 +97,6 @@ public class TrackingController {
         // Get stock levels and populate the table view
         List<Ingredient> stockLevels = bohDataAccessor.getStockLevels();
         stockTableView.getItems().addAll(stockLevels);
-
     }
 
     public void switchToHome(ActionEvent event) throws IOException {

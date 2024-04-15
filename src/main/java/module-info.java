@@ -5,7 +5,6 @@ module com.example.javateamproject {
     requires jdk.httpserver;
     requires java.desktop;
     requires BOHLibrary;
-    //requires BOHLibrary;
 
 
     opens com.example.javateamproject to javafx.fxml;
