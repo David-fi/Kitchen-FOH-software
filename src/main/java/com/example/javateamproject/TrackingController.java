@@ -27,13 +27,12 @@ import java.sql.*;
 import java.io.IOException;
 import java.time.LocalDate;
 import java.util.ResourceBundle;
-import FinalInterTeamServices.BOH.BOHDataAccessor;
+/* import FinalInterTeamServices.BOH.BOHDataAccessor;
 import FinalInterTeamServices.BOH.BOHFinalInterface;
 import model.Ingredient;
 import java.util.List;
-
-
-public class TrackingController implements Initializable{
+*/
+public class TrackingController {
     @FXML
     private Button signinButton;
     @FXML
@@ -74,6 +73,26 @@ public class TrackingController implements Initializable{
     public void initialize() {
         // Checks if user is already signed in when page is loaded.
         checkSignedIn();
+        col_id.setCellValueFactory(new PropertyValueFactory<WasteEntry, Integer>("wasteID"));
+        col_ingredients_id.setCellValueFactory(new PropertyValueFactory<WasteEntry, Integer>("ingredientID"));
+        col_quantity.setCellValueFactory(new PropertyValueFactory<WasteEntry, Double>("quantity"));
+        col_reason.setCellValueFactory(new PropertyValueFactory<WasteEntry, String>("reason"));
+        col_date_logged.setCellValueFactory(new PropertyValueFactory<WasteEntry, LocalDate>("dateLogged"));
+
+        listW = SqlConnection.getWasteData();
+        table_users.setItems(listW);
+        FilteredList<WasteEntry> filteredData = new FilteredList<>(listW, b->true);
+
+// Set up table columns
+        ingredientIdColumn.setCellValueFactory(cellData -> new SimpleIntegerProperty(cellData.getValue().getIngredientID()).asObject());
+        nameColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getName()));
+        quantityColumn.setCellValueFactory(cellData -> new SimpleIntegerProperty(cellData.getValue().getQuantity()).asObject());
+        thresholdColumn.setCellValueFactory(cellData -> new SimpleIntegerProperty(cellData.getValue().getThreshold()).asObject());
+
+        // Get stock levels and populate the table view
+        List<Ingredient> stockLevels = bohDataAccessor.getStockLevels();
+        stockTableView.getItems().addAll(stockLevels);
+
     }
 
     public void switchToHome(ActionEvent event) throws IOException {
@@ -87,27 +106,33 @@ public class TrackingController implements Initializable{
 
     public void switchToAddWaste(ActionEvent event) throws IOException {
         // Switches to add waste page.
-        Parent root = FXMLLoader.load(getClass().getResource("add-waste-page.fxml"));
-        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("add-waste-page.fxml"));
+            Parent root = loader.load();
+            Stage stage = new Stage();
+            stage.initStyle(StageStyle.TRANSPARENT);
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.setScene(new Scene(root));
+            stage.showAndWait();
     }
     public void switchToDeleteWaste(ActionEvent event) throws IOException {
         // Switches to add waste page.
-        Parent root = FXMLLoader.load(getClass().getResource("delete-waste-page.fxml"));
-        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("delete-waste-page.fxml"));
+        Parent root = loader.load();
+        Stage stage = new Stage();
+        stage.initStyle(StageStyle.TRANSPARENT);
+        stage.initModality(Modality.APPLICATION_MODAL);
+        stage.setScene(new Scene(root));
+        stage.showAndWait();
     }
     public void switchToEditWaste(ActionEvent event) throws IOException {
         // Switches to add waste page.
-        Parent root = FXMLLoader.load(getClass().getResource("edit-waste-page.fxml"));
-        Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-        Scene scene = new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("edit-waste-page.fxml"));
+        Parent root = loader.load();
+        Stage stage = new Stage();
+        stage.initStyle(StageStyle.TRANSPARENT);
+        stage.initModality(Modality.APPLICATION_MODAL);
+        stage.setScene(new Scene(root));
+        stage.showAndWait();
     }
 
     public void switchToOrder(ActionEvent event) throws IOException {
@@ -217,32 +242,6 @@ public class TrackingController implements Initializable{
             signinImage.setImage(new Image(getClass().getResourceAsStream("/com/example/javateamproject/StyleElements/Logout.png")));
         }
     }
-
-
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        col_id.setCellValueFactory(new PropertyValueFactory<WasteEntry, Integer>("wasteID"));
-        col_ingredients_id.setCellValueFactory(new PropertyValueFactory<WasteEntry, Integer>("ingredientID"));
-        col_quantity.setCellValueFactory(new PropertyValueFactory<WasteEntry, Double>("quantity"));
-        col_reason.setCellValueFactory(new PropertyValueFactory<WasteEntry, String>("reason"));
-        col_date_logged.setCellValueFactory(new PropertyValueFactory<WasteEntry, LocalDate>("dateLogged"));
-
-        listW = SqlConnection.getWasteData();
-        table_users.setItems(listW);
-        FilteredList<WasteEntry> filteredData = new FilteredList<>(listW, b->true);
-
-// Set up table columns
-        ingredientIdColumn.setCellValueFactory(cellData -> new SimpleIntegerProperty(cellData.getValue().getIngredientID()).asObject());
-        nameColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getName()));
-        quantityColumn.setCellValueFactory(cellData -> new SimpleIntegerProperty(cellData.getValue().getQuantity()).asObject());
-        thresholdColumn.setCellValueFactory(cellData -> new SimpleIntegerProperty(cellData.getValue().getThreshold()).asObject());
-
-        // Get stock levels and populate the table view
-        List<Ingredient> stockLevels = bohDataAccessor.getStockLevels();
-        stockTableView.getItems().addAll(stockLevels);
-
-    }
-
 }
 
 
