@@ -12,22 +12,7 @@ public class Menu {
         this.connection = connection;
     }
 
-    public void addMenuToDatabase(int menuID,String WeekStartDate,int ChefID) {
-        String sql = "INSERT INTO Menus (MenuID, WeekStartDate, ChefID) VALUES (menuID, WeekStartDate, ChefID)";
-        try (PreparedStatement statement = connection.prepareStatement(sql)) {
-            statement.setInt(1, menuID);
-            statement.setInt(2, ChefID);
-            statement.setString(3, WeekStartDate);
-            int rowsInserted = statement.executeUpdate();
-            if (rowsInserted > 0) {
-                System.out.println("Menu added successfully!");
-            } else {
-                System.out.println("Failed to add menu.");
-            }
-        } catch (SQLException ex) {
-            ex.getMessage();
-        }
-    }
+
     public void addDishesToMenu(int menuID,int DishID) {
         String sql = "INSERT INTO MenuDishes WHERE MenuID = ? AND DishID= ?";
         try (PreparedStatement statement = connection.prepareStatement(sql)) {

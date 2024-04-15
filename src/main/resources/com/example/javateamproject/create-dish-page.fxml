@@ -26,7 +26,7 @@
                   <Font size="30.0" />
                </font>
             </Text>
-            <Button fx:id="SubmitNewDishtoDatabase" layoutX="499.0" layoutY="543.0" mnemonicParsing="false" text="Submit" AnchorPane.leftAnchor="350.0" AnchorPane.rightAnchor="350.0" />
+            <Button fx:id="SubmitNewDishtoDatabase" layoutX="499.0" layoutY="543.0" mnemonicParsing="false" onAction="#handleSave" text="Submit" AnchorPane.leftAnchor="350.0" AnchorPane.rightAnchor="350.0" />
             </children>
         </AnchorPane>
       <HBox alignment="CENTER_RIGHT" layoutX="-132.0" layoutY="9.0" prefHeight="18.0" prefWidth="633.0" spacing="10.0" styleClass="background-colour" stylesheets="@StyleElements/style.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">

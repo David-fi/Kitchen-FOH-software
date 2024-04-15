@@ -18,6 +18,7 @@ import javafx.stage.StageStyle;
 
 import java.io.IOException;
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
@@ -43,10 +44,11 @@ public class CreateDishController {
     private Label usernameLabel;
     @FXML
     private ImageView signinImage;
+    private String url = "jdbc:mysql://smcse-stuproj00.city.ac.uk:3306/in2033t35";
+    private String user = "in2033t35_a";
+    private String password ="3h058sqxPaI";
 
-    /* public CreateDishController(Connection connection) {
-        this.connection = connection; //To implement a connection
-    } */
+
     public void handleCloseButton(ActionEvent event) {
         Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
         stage.close();
@@ -59,27 +61,34 @@ public class CreateDishController {
         String createDishEnterPhotoPath = CreateDishEnterPhotoPath.getText();
         int createDishEnterPreparationTime = Integer.parseInt(CreateDishEnterPreparationTime.getText());
         System.out.println("User Input: " + createDishEnterDishID); // For demonstration: print it out
+        addDishesToDatabase(createDishEnterDishID, createDishEnterDishName, createDishEnterRecipeID, createDishEnterPhotoPath, createDishEnterPreparationTime);
+
 
     }
 
         public void addDishesToDatabase(int DishesID,String Name, int RecipeID, String PhotoPath,int PreparationTime) {
-            String sql = "INSERT INTO Dishes WHERE DishID = ?AND Name=? AND RecipeID=? AND PhotoPath=? AND PreparationTime=?";
-            try (PreparedStatement statement = connection.prepareStatement(sql)) {
-                statement.setInt(1, DishesID);
-                statement.setString(2, Name);
-                statement.setInt(3, RecipeID);
-                statement.setString(4, PhotoPath);
-                statement.setInt(5, PreparationTime);
-                int rowsInserted = statement.executeUpdate();
-                if (rowsInserted > 0) {
-                    System.out.println("Menu added successfully!");
-                } else {
-                    System.out.println("Failed to add menu.");
+
+
+            String sql = "INSERT INTO Dishes (DishID, Name, RecipeID, PhotoPath, PreparationTime) VALUES (?, ?, ?, ?, ?)";
+
+            try {Connection connection=null;
+                 connection=DriverManager.getConnection(url,user,password);
+                    PreparedStatement statement = connection.prepareStatement(sql);{
+                    statement.setInt(1, DishesID);
+                    statement.setString(2, Name);
+                    statement.setInt(3, RecipeID);
+                    statement.setString(4, PhotoPath);
+                    statement.setInt(5, PreparationTime);
+                    int rowsInserted = statement.executeUpdate();
+                    if (rowsInserted > 0) {
+                        System.out.println("Menu added successfully!");
+                    } else {
+                        System.out.println("Failed to add menu.");
+                    }
                 }
             } catch (SQLException ex) {
                 ex.printStackTrace();
             }
         }
-        //addDishesToDatabase(createDishEnterDishID, createDishEnterDishName, createDishEnterRecipeID, createDishEnterPhotoPath, createDishEnterPreparationTime);
     }
 

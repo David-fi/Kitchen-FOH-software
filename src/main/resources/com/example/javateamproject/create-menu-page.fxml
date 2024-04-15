@@ -16,15 +16,15 @@
         <AnchorPane layoutX="200.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
             <children>
                 <Label alignment="CENTER" text="Designed and developed by TechformIT © 2024" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
-            <TextArea layoutX="160.0" layoutY="226.0" prefHeight="40.0" prefWidth="300.0" promptText="Enter Your MenuID" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="200.0" />
-            <TextField layoutX="160.0" layoutY="301.0" prefHeight="45.0" prefWidth="300.0" promptText="Enter Your DishID that you wish to add into Menu" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="200.0" />
-            <TextArea layoutX="160.0" layoutY="387.0" prefHeight="40.0" prefWidth="300.0" promptText="Enter Your ChefID" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="200.0" />
+            <TextArea fx:id="CreateMenuEnterMenuID" layoutX="160.0" layoutY="226.0" prefHeight="40.0" prefWidth="300.0" promptText="Enter Your MenuID" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="200.0" />
+            <TextField fx:id="CreateMenuEnterDate" layoutX="160.0" layoutY="301.0" prefHeight="45.0" prefWidth="300.0" promptText="Enter Your DishID that you wish to add into Menu" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="200.0" />
+            <TextArea fx:id="CreateMenuEnterChefID" layoutX="160.0" layoutY="387.0" prefHeight="40.0" prefWidth="300.0" promptText="Enter Your ChefID" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="200.0" />
             <Text layoutX="272.0" layoutY="165.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Create Menu" textAlignment="CENTER" wrappingWidth="200.00000000000006" AnchorPane.leftAnchor="272.0" AnchorPane.rightAnchor="327.99999999999994">
                <font>
                   <Font size="30.0" />
                </font>
             </Text>
-            <Button layoutX="503.0" layoutY="462.0" mnemonicParsing="false" text="Submit" AnchorPane.leftAnchor="350.0" AnchorPane.rightAnchor="350.0" />
+            <Button layoutX="503.0" layoutY="462.0" mnemonicParsing="false" onAction="#HandleSaveMenu" text="Submit" AnchorPane.leftAnchor="350.0" AnchorPane.rightAnchor="350.0" />
             </children>
         </AnchorPane>
       <HBox alignment="CENTER_RIGHT" layoutX="-122.0" layoutY="19.0" prefHeight="18.0" prefWidth="633.0" spacing="10.0" styleClass="background-colour" stylesheets="@StyleElements/style.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
