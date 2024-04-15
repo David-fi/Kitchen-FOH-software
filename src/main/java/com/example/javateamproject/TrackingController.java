@@ -33,7 +33,7 @@ import model.Ingredient;
 import java.util.List;
 
 
-public class TrackingController implements Initializable{
+public class TrackingController{
     @FXML
     private Button signinButton;
     @FXML
@@ -74,6 +74,26 @@ public class TrackingController implements Initializable{
     public void initialize() {
         // Checks if user is already signed in when page is loaded.
         checkSignedIn();
+        col_id.setCellValueFactory(new PropertyValueFactory<WasteEntry, Integer>("wasteID"));
+        col_ingredients_id.setCellValueFactory(new PropertyValueFactory<WasteEntry, Integer>("ingredientID"));
+        col_quantity.setCellValueFactory(new PropertyValueFactory<WasteEntry, Double>("quantity"));
+        col_reason.setCellValueFactory(new PropertyValueFactory<WasteEntry, String>("reason"));
+        col_date_logged.setCellValueFactory(new PropertyValueFactory<WasteEntry, LocalDate>("dateLogged"));
+
+        listW = SqlConnection.getWasteData();
+        table_users.setItems(listW);
+        FilteredList<WasteEntry> filteredData = new FilteredList<>(listW, b->true);
+
+// Set up table columns
+        ingredientIdColumn.setCellValueFactory(cellData -> new SimpleIntegerProperty(cellData.getValue().getIngredientID()).asObject());
+        nameColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getName()));
+        quantityColumn.setCellValueFactory(cellData -> new SimpleIntegerProperty(cellData.getValue().getQuantity()).asObject());
+        thresholdColumn.setCellValueFactory(cellData -> new SimpleIntegerProperty(cellData.getValue().getThreshold()).asObject());
+
+        // Get stock levels and populate the table view
+        List<Ingredient> stockLevels = bohDataAccessor.getStockLevels();
+        stockTableView.getItems().addAll(stockLevels);
+
     }
 
     public void switchToHome(ActionEvent event) throws IOException {
@@ -219,29 +239,7 @@ public class TrackingController implements Initializable{
     }
 
 
-    @Override
-    public void initialize(URL url, ResourceBundle resourceBundle) {
-        col_id.setCellValueFactory(new PropertyValueFactory<WasteEntry, Integer>("wasteID"));
-        col_ingredients_id.setCellValueFactory(new PropertyValueFactory<WasteEntry, Integer>("ingredientID"));
-        col_quantity.setCellValueFactory(new PropertyValueFactory<WasteEntry, Double>("quantity"));
-        col_reason.setCellValueFactory(new PropertyValueFactory<WasteEntry, String>("reason"));
-        col_date_logged.setCellValueFactory(new PropertyValueFactory<WasteEntry, LocalDate>("dateLogged"));
 
-        listW = SqlConnection.getWasteData();
-        table_users.setItems(listW);
-        FilteredList<WasteEntry> filteredData = new FilteredList<>(listW, b->true);
-
-// Set up table columns
-        ingredientIdColumn.setCellValueFactory(cellData -> new SimpleIntegerProperty(cellData.getValue().getIngredientID()).asObject());
-        nameColumn.setCellValueFactory(cellData -> new SimpleStringProperty(cellData.getValue().getName()));
-        quantityColumn.setCellValueFactory(cellData -> new SimpleIntegerProperty(cellData.getValue().getQuantity()).asObject());
-        thresholdColumn.setCellValueFactory(cellData -> new SimpleIntegerProperty(cellData.getValue().getThreshold()).asObject());
-
-        // Get stock levels and populate the table view
-        List<Ingredient> stockLevels = bohDataAccessor.getStockLevels();
-        stockTableView.getItems().addAll(stockLevels);
-
-    }
 
 }
 

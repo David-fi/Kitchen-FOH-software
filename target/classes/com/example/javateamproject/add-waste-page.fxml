@@ -10,12 +10,12 @@
             <AnchorPane layoutX="200.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="200.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                 <children>
                     <Label alignment="CENTER" text="Designed and developed by TechformIT © 2024" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" />
-                    <TextArea layoutX="230.0" layoutY="130.0" prefHeight="40.0" prefWidth="300.0" promptText="Enter the WasteID" />
-                    <TextArea layoutX="230.0" layoutY="243.0" prefHeight="40.0" prefWidth="300.0" promptText="Enter the IngredientID" />
-                    <TextArea layoutX="230.0" layoutY="303.0" prefHeight="40.0" prefWidth="300.0" promptText="Reason Why" />
-                    <TextArea layoutX="230.0" layoutY="188.0" prefHeight="40.0" prefWidth="300.0" promptText="Quantity" />
-                    <TextArea layoutX="230.0" layoutY="360.0" prefHeight="40.0" prefWidth="300.0" promptText="Date" />
-                    <TextArea layoutX="230.0" layoutY="413.0" prefHeight="40.0" prefWidth="300.0" promptText="Enter WasteTypeID" />
+                    <TextArea fx:id="createWasteID" layoutX="230.0" layoutY="130.0" prefHeight="40.0" prefWidth="300.0" promptText="Enter the WasteID" />
+                    <TextArea fx:id="createIngredientID" layoutX="230.0" layoutY="243.0" prefHeight="40.0" prefWidth="300.0" promptText="Enter the IngredientID" />
+                    <TextArea fx:id="createReason" layoutX="230.0" layoutY="303.0" prefHeight="40.0" prefWidth="300.0" promptText="Reason Why" />
+                    <TextArea fx:id="createQuantity" layoutX="230.0" layoutY="188.0" prefHeight="40.0" prefWidth="300.0" promptText="Quantity" />
+                    <TextArea fx:id="createDateLogged" layoutX="230.0" layoutY="360.0" prefHeight="40.0" prefWidth="300.0" promptText="Date" />
+                    <TextArea fx:id="createWasteTypeID" layoutX="230.0" layoutY="413.0" prefHeight="40.0" prefWidth="300.0" promptText="Enter WasteTypeID" />
                     <Separator layoutY="240.0" prefHeight="3.0" prefWidth="880.0" />
                     <Button layoutX="549.0" layoutY="500.0" mnemonicParsing="false" text="Submit" />
                     <Text layoutX="55.0" layoutY="98.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Add Waste" wrappingWidth="263.50000000000006">

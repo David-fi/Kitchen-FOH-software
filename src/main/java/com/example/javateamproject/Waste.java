@@ -1,5 +1,7 @@
 package com.example.javateamproject;
 
+import javafx.fxml.FXML;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -9,10 +11,12 @@ public class Waste {
 
     public Connection connection;
 
-    public Waste (Connection connection) {this.connection = connection;}
+    public Waste (Connection connection) {
+        this.connection = connection;
+    }
 
     public void addWasteToDatabase(int WasteID,int IngredientID, int Quantity, String Reason,String DateLogged, int WasteTypeID) {
-        String sql = "INSERT INTO Waste WHERE WasteID = ? AND IngredientID = ? AND Quantity = ? AND Reason = ? AND DateLogged = ? AND WasteTypeID = ?";
+        String sql = "INSERT INTO Waste (WasteID, IngredientID, Quantity, Reason, DateLogged, WasteTypeID) VALUES (?, ?, ?, ?, ?, ?)";
         try (PreparedStatement statement = connection.prepareStatement(sql)) {
             statement.setInt(1, WasteID);
             statement.setInt(2, IngredientID);
@@ -27,9 +31,37 @@ public class Waste {
                 System.out.println("Failed to add Waste.");
             }
         } catch (SQLException ex) {
-            ex.getMessage();
+            System.err.println("Error adding Waste: " + ex.getMessage());
         }
     }
+
+
+    //@FXML
+    //public void handleSave() {
+    //    try {
+    //        int wasteID = Integer.parseInt(createWasteID.getText()); // Assuming createWasteID is a TextField
+    //        int ingredientID = Integer.parseInt(createIngredientID.getText()); // Assuming createIngredientID is a TextField
+    //        int quantity = Integer.parseInt(createQuantity.getText()); // Assuming createQuantity is a TextField
+    //        String reason = createReason.getText(); // Assuming createReason is a TextField
+    //        String dateLogged = createDateLogged.getText(); // Assuming createDateLogged is a TextField
+    //        int wasteTypeID = Integer.parseInt(createWasteTypeID.getText()); // Assuming createWasteTypeID is a TextField
+
+            // Call the method to add waste data to database
+    //        addWasteToDatabase(wasteID, ingredientID, quantity, reason, dateLogged, wasteTypeID);
+    //    } catch (NumberFormatException e) {
+    //        // Handle parsing errors
+    //        System.err.println("Error parsing input: " + e.getMessage());
+    //    }
+    //}
+
+
+
+
+
+
+
+
+
     public boolean removeWasteFromDatabase(int WasteID) {
         String sql = "DELETE FROM Waste WHERE WasteID = ?";
         try (PreparedStatement statement = connection.prepareStatement(sql)) {
