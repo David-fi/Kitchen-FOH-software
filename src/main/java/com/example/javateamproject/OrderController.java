@@ -15,6 +15,8 @@ import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
 import java.io.IOException;
+import java.sql.*;
+import java.util.*;
 
 public class OrderController {
     @FXML
@@ -25,10 +27,68 @@ public class OrderController {
     private Label usernameLabel;
     @FXML
     private ImageView signinImage;
+    @FXML
+    private Button table1Button;
+    @FXML
+    private Button table2Button;
+    @FXML
+    private Button table3Button;
+    @FXML
+    private Button table4Button;
+    @FXML
+    private Button table5Button;
+    @FXML
+    private Button table6Button;
+    @FXML
+    private Button table7Button;
+    @FXML
+    private Button table8Button;
+    @FXML
+    private Button table9Button;
+    @FXML
+    private Button table10Button;
+    @FXML
+    private Button table11Button;
+    @FXML
+    private Button table12Button;
+    @FXML
+    private Button table13Button;
+    @FXML
+    private Button table14Button;
+    @FXML
+    private Button table15Button;
+    private String url = "jdbc:mysql://smcse-stuproj00.city.ac.uk:3306/in2033t35";
+    private String user = "in2033t35_a";
+    private String password = "3h058sqxPaI";
+    private Map<Button,Integer> buttonTableMap = new HashMap<>();
+    private List<Integer> tablePendingOrders = new ArrayList<>();
 
     public void initialize() {
         // Checks if user is already signed in when page is loaded.
         checkSignedIn();
+        buttonTableMap.put(table1Button, 1);
+        buttonTableMap.put(table2Button, 2);
+        buttonTableMap.put(table3Button, 3);
+        buttonTableMap.put(table4Button, 4);
+        buttonTableMap.put(table5Button, 5);
+        buttonTableMap.put(table6Button, 6);
+        buttonTableMap.put(table7Button, 7);
+        buttonTableMap.put(table8Button, 8);
+        buttonTableMap.put(table9Button, 9);
+        buttonTableMap.put(table10Button, 10);
+        buttonTableMap.put(table11Button, 11);
+        buttonTableMap.put(table12Button, 12);
+        buttonTableMap.put(table13Button, 13);
+        buttonTableMap.put(table14Button, 14);
+        buttonTableMap.put(table15Button, 15);
+        Timer timer = new Timer();
+        timer.scheduleAtFixedRate(new TimerTask() {
+            @Override
+            public void run() {
+                retrieveOrderedTables();
+                changeTableColor();
+            }
+        }, 0, 15 * 1000);
     }
 
     public void switchToHome(ActionEvent event) throws IOException {
@@ -145,6 +205,178 @@ public class OrderController {
             }
             signinButton.setText("Sign out");
             signinImage.setImage(new Image(getClass().getResourceAsStream("/com/example/javateamproject/StyleElements/Logout.png")));
+        }
+    }
+
+    private void retrieveOrderedTables() {
+        try {
+            tablePendingOrders.clear();
+            Connection connection = DriverManager.getConnection(url, user, password);
+            String query = "SELECT DISTINCT TableID FROM Orders WHERE Status = 'Pending'";
+            PreparedStatement preparedStatement = connection.prepareStatement(query);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                tablePendingOrders.add(resultSet.getInt("TableID"));
+            }
+            resultSet.close();
+            preparedStatement.close();
+            connection.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+    private void changeTableColor() {
+        for (Button button : buttonTableMap.keySet()) {
+            Integer tableID = buttonTableMap.get(button);
+            if (tablePendingOrders.contains(tableID)) {
+                button.setStyle("-fx-background-color: linear-gradient(to right bottom, #42E695, #32B2B8);");
+            } else {
+                button.setStyle("-fx-background-color: transparent");
+            }
+        }
+    }
+    public void showTable1Window() {
+        try{
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("table-order.fxml"));
+            Parent root = loader.load();
+            TableOrderController controller = loader.getController();
+            controller.setTableNumber("Table 1");
+            controller.getOrders();
+            Stage stage = new Stage();
+            stage.initStyle(StageStyle.TRANSPARENT);
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.setScene(new Scene(root));
+            stage.showAndWait();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    public void showTable2Window() {
+        try{
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("table-order.fxml"));
+            Parent root = loader.load();
+            TableOrderController controller = loader.getController();
+            controller.setTableNumber("Table 2");
+            controller.getOrders();
+            Stage stage = new Stage();
+            stage.initStyle(StageStyle.TRANSPARENT);
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.setScene(new Scene(root));
+            stage.showAndWait();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    public void showTable3Window() {
+        try{
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("table-order.fxml"));
+            Parent root = loader.load();
+            TableOrderController controller = loader.getController();
+            controller.setTableNumber("3");
+            controller.getOrders();
+            Stage stage = new Stage();
+            stage.initStyle(StageStyle.TRANSPARENT);
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.setScene(new Scene(root));
+            stage.showAndWait();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    public void showTable4Window() {
+        try{
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("table-order.fxml"));
+            Parent root = loader.load();
+            TableOrderController controller = loader.getController();
+            controller.setTableNumber("4");
+            controller.getOrders();
+            Stage stage = new Stage();
+            stage.initStyle(StageStyle.TRANSPARENT);
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.setScene(new Scene(root));
+            stage.showAndWait();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    public void showTable5Window() {
+        try{
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("table-order.fxml"));
+            Parent root = loader.load();
+            TableOrderController controller = loader.getController();
+            controller.setTableNumber("5");
+            controller.getOrders();
+            Stage stage = new Stage();
+            stage.initStyle(StageStyle.TRANSPARENT);
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.setScene(new Scene(root));
+            stage.showAndWait();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    public void showTable6Window() {
+        try{
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("table-order.fxml"));
+            Parent root = loader.load();
+            TableOrderController controller = loader.getController();
+            controller.setTableNumber("1");
+            controller.getOrders();
+            Stage stage = new Stage();
+            stage.initStyle(StageStyle.TRANSPARENT);
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.setScene(new Scene(root));
+            stage.showAndWait();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    public void showTable7Window() {
+        try{
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("table-order.fxml"));
+            Parent root = loader.load();
+            TableOrderController controller = loader.getController();
+            controller.setTableNumber("");
+            controller.getOrders();
+            Stage stage = new Stage();
+            stage.initStyle(StageStyle.TRANSPARENT);
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.setScene(new Scene(root));
+            stage.showAndWait();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    public void showTable8Window() {
+        try{
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("table-order.fxml"));
+            Parent root = loader.load();
+            TableOrderController controller = loader.getController();
+            controller.setTableNumber("Table 9");
+            controller.getOrders();
+            Stage stage = new Stage();
+            stage.initStyle(StageStyle.TRANSPARENT);
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.setScene(new Scene(root));
+            stage.showAndWait();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    public void showTable9Window() {
+        try{
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("table-order.fxml"));
+            Parent root = loader.load();
+            TableOrderController controller = loader.getController();
+            controller.setTableNumber("Table 9");
+            controller.getOrders();
+            Stage stage = new Stage();
+            stage.initStyle(StageStyle.TRANSPARENT);
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.setScene(new Scene(root));
+            stage.showAndWait();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
         }
     }
 }

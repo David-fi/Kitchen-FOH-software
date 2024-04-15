@@ -28,25 +28,85 @@ public class SqlConnection {
         }
     }
 
-    public static ObservableList<users> getDatausers(){
+    public static ObservableList<usersTwo> getDishData(){
+
+        Connection conn = ConnectDb();
+        ObservableList<usersTwo> list = FXCollections.observableArrayList();
+
+        try{
+            PreparedStatement ps = conn.prepareStatement( "SELECT DishID,Name,RecipeID,PreparationTime\n" +
+                    "FROM Dishes\n");
+            ResultSet rs = ps.executeQuery();
+
+            while(rs.next()){
+                list.add(new usersTwo(rs.getInt("DishID"),rs.getString("Name"),rs.getInt("RecipeID"),rs.getInt("PreparationTime")));
+            }
+
+
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+        return list;
+    }
+
+    public static ObservableList<users> getRecipeData(){
 
         Connection conn = ConnectDb();
         ObservableList<users> list = FXCollections.observableArrayList();
 
         try{
             PreparedStatement ps = conn.prepareStatement("SELECT \n" +
-                    "    Menus.MenuID,\n" +
-                    "    Menus.WeekStartDate,\n" +
-                    "    Dishes.Name AS DishName\n" +
-                    "FROM Menus\n" +
-                    "JOIN MenuDishes ON Menus.MenuID = MenuDishes.MenuID\n" +
-                    "JOIN Dishes ON MenuDishes.DishID = Dishes.DishID\n" +
-                    "ORDER BY Menus.MenuID, Dishes.Name;");
+                    "    Recipes.RecipeID,\n" +
+                    "    Recipes.Name AS RecipeName,\n" +
+                    "    Recipes.Description,\n" +
+                    "    Chefs.Name AS ChefName,\n" +
+                    "    Recipes.Status\n" +
+                    "FROM Recipes\n" +
+                    "JOIN Chefs ON Recipes.ChefID = Chefs.ChefID\n" +
+                    "WHERE Recipes.ApprovalStatus = 'Approved'");
             ResultSet rs = ps.executeQuery();
 
 
             while(rs.next()){
-                list.add(new users(Integer.parseInt(rs.getString("MenuID")), rs.getDate("WeekStartDate").toLocalDate(),rs.getString("DishName")));
+                list.add(new users(Integer.parseInt(rs.getString("RecipeID")),rs.getString("RecipeName"),rs.getString("Description"),rs.getString("ChefName"),rs.getString("Status")));
+//                list.add(new users(Integer.parseInt(rs.getString("MenuID")), rs.getDate("WeekStartDate").toLocalDate(),rs.getString("DishName")));
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+
+        return list;
+    }
+
+
+
+
+    public static ObservableList<WasteEntry> getWasteData(){
+
+        Connection conn = ConnectDb();
+        ObservableList<WasteEntry> list = FXCollections.observableArrayList();
+
+        try{
+            PreparedStatement ps = conn.prepareStatement("SELECT " +
+                    "WasteID, " +
+                    "IngredientID, " +
+                    "Quantity, " +
+                    "Reason, " +
+                    "DateLogged, " +
+                    "WasteTypeID " +
+                    "FROM Waste;");
+            ResultSet rs = ps.executeQuery();
+
+
+            while(rs.next()){
+                list.add(new WasteEntry((
+                        rs.getInt("WasteID")),
+                        rs.getInt("IngredientID"),
+                        rs.getDouble("Quantity"),
+                        rs.getString("Reason"),
+                        rs.getDate("DateLogged").toLocalDate()));
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -55,7 +115,5 @@ public class SqlConnection {
 
         return list;
     }
-
-
 
 }

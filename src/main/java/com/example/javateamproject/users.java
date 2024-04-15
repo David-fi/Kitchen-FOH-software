@@ -1,43 +1,66 @@
 package com.example.javateamproject;
 
-import java.time.LocalDate;
 
-public class users {
 
+
+public class users{
     int id;
 
-    LocalDate weekStartDate;
+    String foodName;
+
+    String description;
 
     String name;
 
+    String status;
 
-    public users(int id, LocalDate weekStartDate, String name) {
+    public users(int id, String foodName, String description, String name, String status) {
         this.id = id;
-        this.weekStartDate = weekStartDate;
+        this.foodName = foodName;
+        this.description = description;
         this.name = name;
+        this.status = status;
     }
+
 
     public int getId() {
         return id;
     }
 
-    public LocalDate getWeekStartDate() {
-        return weekStartDate;
+    public String getFoodName() {
+        return foodName;
+    }
+
+    public String getDescription() {
+        return description;
     }
 
     public String getName() {
         return name;
     }
 
+    public String getStatus() {
+        return status;
+    }
+
+
     public void setId(int id) {
         this.id = id;
     }
 
-    public void setWeekStartDate(LocalDate weekStartDate) {
-        this.weekStartDate = weekStartDate;
+    public void setFoodName(String foodName) {
+        this.foodName = foodName;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }

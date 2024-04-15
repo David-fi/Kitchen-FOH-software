@@ -7,9 +7,10 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javateamproject.Order">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.javateamproject.TableOrderController">
    <children>
       <HBox alignment="CENTER_RIGHT" layoutX="10.0" layoutY="11.0" prefHeight="1.0" prefWidth="600.0" spacing="10.0" styleClass="background-colour" stylesheets="@StyleElements/style.css" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -24,8 +25,12 @@
             </Button>
          </children>
       </HBox>
-      <ScrollPane layoutX="200.0" layoutY="100.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-radius: 10px;" styleClass="gradient-border" stylesheets="@StyleElements/style.css" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="50.0" />
-      <Label fx:id="tableNumberLabel" layoutX="243.0" layoutY="33.0" text="[Table Number]">
+      <ScrollPane fx:id="orderPane" layoutX="200.0" layoutY="100.0" prefHeight="200.0" prefWidth="200.0" style="-fx-background-radius: 10px;" styleClass="gradient-border" stylesheets="@StyleElements/style.css" AnchorPane.bottomAnchor="25.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="50.0">
+         <content>
+            <VBox fx:id="orderBox" prefHeight="311.0" prefWidth="489.0" />
+         </content>
+      </ScrollPane>
+      <Label fx:id="tableNumberLabel" alignment="CENTER" layoutX="243.0" layoutY="33.0" text="[Table Number]" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0">
          <font>
             <Font name="Arial Rounded MT Bold" size="15.0" />
          </font>

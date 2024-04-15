@@ -11,6 +11,7 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 
+import java.io.IOException;
 import java.sql.*;
 
 public class LoginController {
@@ -55,7 +56,6 @@ public class LoginController {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         } finally {
-            // Close resources in the finally block
             try {
                 if (resultSet != null) {
                     resultSet.close();
@@ -67,7 +67,6 @@ public class LoginController {
                     connection.close();
                 }
             } catch (SQLException e) {
-                // Log or handle the exception if closing resources fails
                 e.printStackTrace();
             }
         }
@@ -86,16 +85,20 @@ public class LoginController {
         }
     }
 
-    public void showAlertWindow (String message) throws Exception {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("alert.fxml"));
-        Parent root = loader.load();
-        AlertController controller = loader.getController();
-        controller.setMessage(message);
-        Stage stage = new Stage();
-        stage.initStyle(StageStyle.TRANSPARENT);
-        stage.initModality(Modality.APPLICATION_MODAL);
-        stage.setScene(new Scene(root));
-        stage.showAndWait();
+    public void showAlertWindow (String message) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("alert.fxml"));
+            Parent root = loader.load();
+            AlertController controller = loader.getController();
+            controller.setMessage(message);
+            Stage stage = new Stage();
+            stage.initStyle(StageStyle.TRANSPARENT);
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.setScene(new Scene(root));
+            stage.showAndWait();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public static void clearLogin(){
